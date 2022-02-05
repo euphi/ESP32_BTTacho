@@ -26,7 +26,7 @@ void BtClassicForumsLader::updateDataFromString() {
 			int32_t  timecounter;
 			int32_t  pulsecounter;
 			int32_t  micropulsecounter;
-			scanCt = sscanf(bufferSerial.c_str(), "$FL5,%hx,%hhd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%d,%d,%d\n", &err_flags, &stufe, &pulses, &batterie[0],&batterie[1],&batterie[2],&unknown[2],&unknown[3],&unknown[3],&unknown[4],&unknown[5],&micropulsecounter,&pulsecounter,&timecounter);
+			scanCt = sscanf(bufferSerial.c_str(), "$FL5,%hx,%hhd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%d,%d,%d\n", &err_flags, &stufe, &pulses, &batterie[0],&batterie[1],&batterie[2],&batt_current,&cons_current,&unknown[3],&unknown[4],&unknown[5],&micropulsecounter,&pulsecounter,&timecounter);
 			if (scanCt != 14) Serial.println("❌ Not all fields scanned");
 			Serial.printf("[%x] Batteries: %dmV %dmV %dmV\n", scanCt, batterie[0], batterie[1], batterie[2]);
 			speed_f = pulses * hmh_per_pulse;

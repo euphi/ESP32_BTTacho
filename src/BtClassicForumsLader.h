@@ -14,8 +14,8 @@ public:
 	BtClassicForumsLader();
 	void loop();
 
-	static constexpr float dist_per_pulse = 2.250 / 14; // Umfang / Polpaare
-	static constexpr float hmh_per_pulse = 2.250 / 14 * 3600 * 0.001 * 10; // Umfang / Polpaare * 3600 sec/hour * 0.001 m/km * 10 (100m/km)
+	static constexpr float dist_per_pulse = 2.155 / 14; // Umfang / Polpaare
+	static constexpr float hmh_per_pulse = 2.155 / 14 * 3600 * 0.001 * 10; // Umfang / Polpaare * 3600 sec/hour * 0.001 m/km * 10 (100m/km)
 
 
 private:
@@ -31,6 +31,8 @@ private:
 	uint16_t totalDay;		// in 100m
 	uint16_t totalTour;		// in 100m
 	uint16_t batterie[3];	// in mV
+	int16_t  batt_current;	// in mA
+	int16_t  cons_current;  // in mA
 
     int16_t temperature;	// in 1/10°C
 	uint32_t pressure;		// in Pa (1.013E05 -> normal pressure

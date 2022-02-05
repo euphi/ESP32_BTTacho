@@ -337,8 +337,6 @@ void loop() {
 		display.setTextAlignment(TEXT_ALIGN_LEFT);
 		display.drawString(60, 0, String(forumslader.getVoltageTotal(), 1)+"V");
 		display.drawProgressBar(99, 0, 28, 8, static_cast<uint8_t>((forumslader.getVoltageTotal() - 11.5) / (12.5-11.5) * 100));
-		Serial.println(static_cast<uint8_t>((forumslader.getVoltageTotal() - 11.5) / 12.5 * 100));
-		Serial.println(forumslader.getVoltageTotal());
 
 		// Level - TODO: Extract method
 		int8_t stage = forumslader.getStage();
