@@ -352,7 +352,7 @@ void loop() {
 		// Gradient - TODO: Extract method
 		display.setFont(ArialMT_Plain_16);
 		display.setTextAlignment(TEXT_ALIGN_RIGHT);
-		display.drawString(60, 0, String(forumslader.getGradient(), 1)+"%");
+		display.drawString(60, 16, String(forumslader.getGradient(), 1)+"%");
 
 
 		//display.drawString(40, 32, String(hrm.HRM));
