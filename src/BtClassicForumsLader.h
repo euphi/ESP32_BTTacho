@@ -33,6 +33,7 @@ private:
 	uint16_t batterie[3];	// in mV
 	int16_t  batt_current;	// in mA
 	int16_t  cons_current;  // in mA
+	int16_t int_temp;		// in 1/10°C (or K?)
 
     int16_t temperature;	// in 1/10°C
 	uint32_t pressure;		// in Pa (1.013E05 -> normal pressure

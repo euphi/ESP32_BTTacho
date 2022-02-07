@@ -20,13 +20,15 @@ void BtClassicForumsLader::updateDataFromString() {
 	int8_t scanCt = 0;
 	float speed_f = NAN;
 	if (bufferSerial.startsWith("$FL")) {
-		switch(bufferSerial.charAt(3)) { //                                                                                                                 Strom in mA? // Verbraucherstrom?                     // int. Temp?
-		case '5':  // $FL5,08c800,0,0,4158,4161,4162,-18,0,294,1,233,3679,13231,25897;   $FL5,08c800, 0,           0,          4158,        4161,        4162,       -18,         0,          294,        1,          233,        3679,     13231,         25897;
-			uint16_t pulses;
-			int32_t  timecounter;
-			int32_t  pulsecounter;
-			int32_t  micropulsecounter;
-			scanCt = sscanf(bufferSerial.c_str(), "$FL5,%hx,%hhd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%d,%d,%d\n", &err_flags, &stufe, &pulses, &batterie[0],&batterie[1],&batterie[2],&batt_current,&cons_current,&unknown[3],&unknown[4],&unknown[5],&micropulsecounter,&pulsecounter,&timecounter);
+		uint16_t pulses;
+		int8_t cons_on_off;
+		int16_t timeout;
+		int32_t timecounter;
+		int32_t pulsecounter;
+		int32_t micropulsecounter;
+		switch(bufferSerial.charAt(3)) { //                                                                                                                 Strom in mA? // Verbraucherstrom int. Temp Verbraucher Timeout
+		case '5':  // $FL5,08c800,0,0,4158,4161,4162,-18,0,294,1,233,3679,13231,25897;                        $FL5,08c800,     0,        0,       4158,        4161,        4162,       -18,         0,           294,        1,          233,        3679,             13231,         25897;
+			scanCt = sscanf(bufferSerial.c_str(), "$FL5,%hx,%hhd,%hd,%hd,%hd,%hd,%hd,%hd,%hd,%hhd,%hd,%d,%d,%d\n", &err_flags, &stufe, &pulses, &batterie[0],&batterie[1],&batterie[2],&batt_current,&cons_current,&int_temp,&cons_on_off,&timeout,&micropulsecounter,&pulsecounter,&timecounter);
 			if (scanCt != 14) Serial.println("❌ Not all fields scanned");
 			Serial.printf("[%x] Batteries: %dmV %dmV %dmV\n", scanCt, batterie[0], batterie[1], batterie[2]);
 			speed_f = pulses * hmh_per_pulse;

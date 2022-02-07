@@ -19,6 +19,12 @@
 BluetoothSerial SerialBT;
 BtClassicForumsLader forumslader;
 
+
+//8x WS2812 LED-Strip (for Heart Rate, ...) -> FastLED
+#include <FastLED.h>
+CRGB leds[8];
+
+
 //#include "esp_bt_main.h"
 //#include "esp_bt_device.h"
 //#include"esp_gap_bt_api.h"
@@ -269,6 +275,13 @@ void setup()
   SerialBT.setPin("1234");
   //SerialBT.setPin("0000");
   Serial.println("The device started in master mode, make sure remote BT device is on!");
+
+  // Initialise FastLED
+  FastLED.addLeds<NEOPIXEL, 5>(leds, 8);
+  FastLED.setBrightness(64);
+
+  leds[0] = CRGB::Red;
+  FastLED.show();
 
   // Initialising the UI will init the display too.
   display.init();
