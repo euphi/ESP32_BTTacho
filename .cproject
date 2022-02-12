@@ -25,84 +25,136 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.239157887" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/include"/>
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/FastLED/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/asio"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/console"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/efuse"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-tls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_adc_cal"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_event"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_ota"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_ringbuf"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_websocket_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/espcoredump"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freemodbus"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/heap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/idf_test"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/libsodium"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/micro-ecc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mqtt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protobuf-c"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protocomm"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/pthread"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/smartconfig_ack"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spiffs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcp_transport"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/unity"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-face"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32-camera"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/FastLED/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ringbuf/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/build/esp32-v2-upstream/config"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/newlib/platform_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions/freertos"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/port/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/heap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/log/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps/sntp"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/lwip/src/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include/arch"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/platform_port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/public_compat"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_pm/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/vfs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_wifi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_event/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_netif/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_eth/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcpip_adapter/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ipc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_trace/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_timer/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_update/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spi_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bootloader_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nvs_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/pthread/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include/port/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/esp_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ieee802154/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/console"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/asio/asio/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/osi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/include/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/blufi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/host/bluedroid/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cbor/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/unity/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cmock/CMock/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/libcoap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/nghttp2/lib/includes"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_adc_cal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hid/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcp_transport/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_server/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_https_ota/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/interface"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/common"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/security"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/transports"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mdns/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_local_ctrl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/sdmmc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_serial_slave_link/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_websocket_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/expat/expat/lib"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wear_levelling/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/diskio"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/vfs"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freemodbus/common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/jsmn/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/json/cJSON"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/libsodium/src/libsodium/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/port_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mqtt/esp-mqtt/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/openssl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/perfmon/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spiffs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ulp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wifi_provisioning/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncTCP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESP Async WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Homie/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AzureIoT/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
@@ -111,33 +163,34 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/tool-unity"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.922107295" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_GNU_SOURCE"/>
+									<listOptionValue builtIn="false" value="IDF_VER=&quot;4.4.0&quot;"/>
+									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
+									<listOptionValue builtIn="false" value="_POSIX_READER_WRITER_LOCKS"/>
 									<listOptionValue builtIn="false" value="PLATFORMIO=50204"/>
 									<listOptionValue builtIn="false" value="ARDUINO_ESP32_DEV"/>
+									<listOptionValue builtIn="false" value="ARDUINO"/>
 									<listOptionValue builtIn="false" value="ESP32"/>
-									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
-									<listOptionValue builtIn="false" value="F_CPU=240000000L"/>
-									<listOptionValue builtIn="false" value="HAVE_CONFIG_H"/>
-									<listOptionValue builtIn="false" value="MBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO=10805"/>
-									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP32"/>
-									<listOptionValue builtIn="false" value="ARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+									<listOptionValue builtIn="false" value="CORE_DEBUG_LEVEL=6"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.149990277" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -145,84 +198,136 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1096940598" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/include"/>
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/FastLED/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/asio"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/console"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/efuse"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-tls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_adc_cal"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_event"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_ota"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_ringbuf"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_websocket_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/espcoredump"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freemodbus"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/heap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/idf_test"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/libsodium"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/micro-ecc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mqtt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protobuf-c"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protocomm"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/pthread"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/smartconfig_ack"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spiffs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcp_transport"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/unity"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-face"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32-camera"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/FastLED/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ringbuf/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/build/esp32-v2-upstream/config"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/newlib/platform_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions/freertos"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/port/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/heap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/log/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps/sntp"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/lwip/src/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include/arch"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/platform_port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/public_compat"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_pm/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/vfs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_wifi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_event/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_netif/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_eth/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcpip_adapter/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ipc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_trace/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_timer/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_update/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spi_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bootloader_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nvs_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/pthread/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include/port/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/esp_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ieee802154/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/console"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/asio/asio/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/osi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/include/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/blufi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/host/bluedroid/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cbor/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/unity/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cmock/CMock/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/libcoap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/nghttp2/lib/includes"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_adc_cal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hid/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcp_transport/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_server/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_https_ota/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/interface"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/common"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/security"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/transports"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mdns/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_local_ctrl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/sdmmc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_serial_slave_link/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_websocket_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/expat/expat/lib"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wear_levelling/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/diskio"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/vfs"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freemodbus/common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/jsmn/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/json/cJSON"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/libsodium/src/libsodium/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/port_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mqtt/esp-mqtt/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/openssl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/perfmon/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spiffs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ulp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wifi_provisioning/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncTCP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESP Async WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Homie/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AzureIoT/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
@@ -231,33 +336,34 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/tool-unity"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1198905600" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_GNU_SOURCE"/>
+									<listOptionValue builtIn="false" value="IDF_VER=&quot;4.4.0&quot;"/>
+									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
+									<listOptionValue builtIn="false" value="_POSIX_READER_WRITER_LOCKS"/>
 									<listOptionValue builtIn="false" value="PLATFORMIO=50204"/>
 									<listOptionValue builtIn="false" value="ARDUINO_ESP32_DEV"/>
+									<listOptionValue builtIn="false" value="ARDUINO"/>
 									<listOptionValue builtIn="false" value="ESP32"/>
-									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
-									<listOptionValue builtIn="false" value="F_CPU=240000000L"/>
-									<listOptionValue builtIn="false" value="HAVE_CONFIG_H"/>
-									<listOptionValue builtIn="false" value="MBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO=10805"/>
-									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP32"/>
-									<listOptionValue builtIn="false" value="ARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+									<listOptionValue builtIn="false" value="CORE_DEBUG_LEVEL=6"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.762536863" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -265,84 +371,136 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.41298875" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/include"/>
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/FastLED/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/asio"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/console"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/efuse"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-tls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_adc_cal"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_event"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_ota"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_ringbuf"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_websocket_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/espcoredump"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freemodbus"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/heap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/idf_test"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/libsodium"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/micro-ecc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mqtt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protobuf-c"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protocomm"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/pthread"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/smartconfig_ack"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spiffs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcp_transport"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/unity"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-face"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32-camera"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/FastLED/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ringbuf/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/build/esp32-v2-upstream/config"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/newlib/platform_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions/freertos"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/port/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/heap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/log/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps/sntp"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/lwip/src/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include/arch"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/platform_port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/public_compat"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_pm/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/vfs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_wifi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_event/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_netif/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_eth/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcpip_adapter/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ipc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_trace/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_timer/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_update/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spi_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bootloader_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nvs_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/pthread/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include/port/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/esp_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ieee802154/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/console"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/asio/asio/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/osi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/include/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/blufi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/host/bluedroid/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cbor/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/unity/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cmock/CMock/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/libcoap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/nghttp2/lib/includes"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_adc_cal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hid/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcp_transport/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_server/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_https_ota/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/interface"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/common"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/security"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/transports"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mdns/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_local_ctrl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/sdmmc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_serial_slave_link/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_websocket_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/expat/expat/lib"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wear_levelling/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/diskio"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/vfs"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freemodbus/common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/jsmn/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/json/cJSON"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/libsodium/src/libsodium/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/port_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mqtt/esp-mqtt/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/openssl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/perfmon/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spiffs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ulp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wifi_provisioning/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncTCP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESP Async WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Homie/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AzureIoT/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
@@ -351,33 +509,34 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/tool-unity"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.884639970" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_GNU_SOURCE"/>
+									<listOptionValue builtIn="false" value="IDF_VER=&quot;4.4.0&quot;"/>
+									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
+									<listOptionValue builtIn="false" value="_POSIX_READER_WRITER_LOCKS"/>
 									<listOptionValue builtIn="false" value="PLATFORMIO=50204"/>
 									<listOptionValue builtIn="false" value="ARDUINO_ESP32_DEV"/>
+									<listOptionValue builtIn="false" value="ARDUINO"/>
 									<listOptionValue builtIn="false" value="ESP32"/>
-									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
-									<listOptionValue builtIn="false" value="F_CPU=240000000L"/>
-									<listOptionValue builtIn="false" value="HAVE_CONFIG_H"/>
-									<listOptionValue builtIn="false" value="MBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO=10805"/>
-									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP32"/>
-									<listOptionValue builtIn="false" value="ARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+									<listOptionValue builtIn="false" value="CORE_DEBUG_LEVEL=6"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.549319812" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -411,84 +570,136 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.794801023" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/include"/>
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/FastLED/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/asio"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/console"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/efuse"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-tls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_adc_cal"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_event"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_ota"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_ringbuf"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_websocket_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/espcoredump"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freemodbus"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/heap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/idf_test"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/libsodium"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/micro-ecc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mqtt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protobuf-c"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protocomm"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/pthread"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/smartconfig_ack"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spiffs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcp_transport"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/unity"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-face"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32-camera"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/FastLED/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ringbuf/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/build/esp32-v2-upstream/config"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/newlib/platform_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions/freertos"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/port/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/heap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/log/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps/sntp"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/lwip/src/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include/arch"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/platform_port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/public_compat"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_pm/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/vfs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_wifi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_event/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_netif/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_eth/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcpip_adapter/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ipc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_trace/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_timer/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_update/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spi_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bootloader_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nvs_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/pthread/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include/port/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/esp_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ieee802154/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/console"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/asio/asio/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/osi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/include/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/blufi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/host/bluedroid/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cbor/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/unity/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cmock/CMock/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/libcoap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/nghttp2/lib/includes"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_adc_cal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hid/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcp_transport/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_server/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_https_ota/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/interface"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/common"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/security"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/transports"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mdns/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_local_ctrl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/sdmmc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_serial_slave_link/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_websocket_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/expat/expat/lib"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wear_levelling/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/diskio"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/vfs"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freemodbus/common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/jsmn/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/json/cJSON"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/libsodium/src/libsodium/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/port_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mqtt/esp-mqtt/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/openssl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/perfmon/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spiffs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ulp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wifi_provisioning/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncTCP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESP Async WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Homie/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AzureIoT/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
@@ -497,33 +708,34 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/tool-unity"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.1743427839" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_GNU_SOURCE"/>
+									<listOptionValue builtIn="false" value="IDF_VER=&quot;4.4.0&quot;"/>
+									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
+									<listOptionValue builtIn="false" value="_POSIX_READER_WRITER_LOCKS"/>
 									<listOptionValue builtIn="false" value="PLATFORMIO=50204"/>
 									<listOptionValue builtIn="false" value="ARDUINO_ESP32_DEV"/>
+									<listOptionValue builtIn="false" value="ARDUINO"/>
 									<listOptionValue builtIn="false" value="ESP32"/>
-									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
-									<listOptionValue builtIn="false" value="F_CPU=240000000L"/>
-									<listOptionValue builtIn="false" value="HAVE_CONFIG_H"/>
-									<listOptionValue builtIn="false" value="MBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO=10805"/>
-									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP32"/>
-									<listOptionValue builtIn="false" value="ARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+									<listOptionValue builtIn="false" value="CORE_DEBUG_LEVEL=6"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.919136836" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -531,84 +743,136 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.650084869" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/include"/>
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/FastLED/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/asio"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/console"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/efuse"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-tls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_adc_cal"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_event"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_ota"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_ringbuf"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_websocket_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/espcoredump"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freemodbus"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/heap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/idf_test"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/libsodium"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/micro-ecc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mqtt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protobuf-c"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protocomm"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/pthread"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/smartconfig_ack"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spiffs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcp_transport"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/unity"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-face"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32-camera"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/FastLED/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ringbuf/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/build/esp32-v2-upstream/config"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/newlib/platform_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions/freertos"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/port/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/heap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/log/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps/sntp"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/lwip/src/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include/arch"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/platform_port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/public_compat"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_pm/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/vfs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_wifi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_event/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_netif/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_eth/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcpip_adapter/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ipc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_trace/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_timer/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_update/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spi_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bootloader_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nvs_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/pthread/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include/port/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/esp_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ieee802154/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/console"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/asio/asio/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/osi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/include/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/blufi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/host/bluedroid/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cbor/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/unity/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cmock/CMock/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/libcoap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/nghttp2/lib/includes"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_adc_cal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hid/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcp_transport/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_server/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_https_ota/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/interface"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/common"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/security"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/transports"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mdns/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_local_ctrl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/sdmmc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_serial_slave_link/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_websocket_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/expat/expat/lib"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wear_levelling/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/diskio"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/vfs"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freemodbus/common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/jsmn/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/json/cJSON"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/libsodium/src/libsodium/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/port_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mqtt/esp-mqtt/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/openssl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/perfmon/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spiffs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ulp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wifi_provisioning/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncTCP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESP Async WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Homie/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AzureIoT/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
@@ -617,33 +881,34 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/tool-unity"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.2055633423" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_GNU_SOURCE"/>
+									<listOptionValue builtIn="false" value="IDF_VER=&quot;4.4.0&quot;"/>
+									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
+									<listOptionValue builtIn="false" value="_POSIX_READER_WRITER_LOCKS"/>
 									<listOptionValue builtIn="false" value="PLATFORMIO=50204"/>
 									<listOptionValue builtIn="false" value="ARDUINO_ESP32_DEV"/>
+									<listOptionValue builtIn="false" value="ARDUINO"/>
 									<listOptionValue builtIn="false" value="ESP32"/>
-									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
-									<listOptionValue builtIn="false" value="F_CPU=240000000L"/>
-									<listOptionValue builtIn="false" value="HAVE_CONFIG_H"/>
-									<listOptionValue builtIn="false" value="MBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO=10805"/>
-									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP32"/>
-									<listOptionValue builtIn="false" value="ARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+									<listOptionValue builtIn="false" value="CORE_DEBUG_LEVEL=6"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.445650141" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -651,84 +916,136 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1246337321" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/include"/>
 									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/FastLED/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32doit-devkit-v1/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/asio"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/console"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/efuse"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-tls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_adc_cal"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_event"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_http_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_ota"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_https_server"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_ringbuf"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp_websocket_client"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/espcoredump"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freemodbus"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/heap"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/idf_test"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/libsodium"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/micro-ecc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mqtt"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protobuf-c"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/protocomm"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/pthread"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/smartconfig_ack"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spiffs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcp_transport"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/unity"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp-face"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32-camera"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/FastLED/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/libdeps/esp32-v2-upstream/ESP8266 and ESP32 OLED driver for SSD1306 displays/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ringbuf/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/Bike/ESP32_BTTacho/.pio/build/esp32-v2-upstream/config"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/newlib/platform_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions/freertos"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/port/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freertos/include/esp_additions"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/include/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hw_support/port/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/heap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/log/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/include/apps/sntp"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/lwip/src/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/lwip/port/esp32/include/arch"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/soc/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/hal/platform_port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_rom/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/soc"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_system/port/public_compat"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/xtensa/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/driver/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_pm/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/efuse/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/vfs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_wifi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_event/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_netif/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_eth/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcpip_adapter/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_phy/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_ipc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_trace/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_timer/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/mbedtls/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mbedtls/esp_crt_bundle/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/app_update/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spi_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bootloader_support/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nvs_flash/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/pthread/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_gdbstub/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/espcoredump/include/port/xtensa"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wpa_supplicant/esp_supplicant/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ieee802154/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/console"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/asio/asio/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/asio/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/osi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/include/esp32/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/blufi/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/common/btc/profile/esp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/bt/host/bluedroid/api/include/api"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cbor/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/unity/unity/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/cmock/CMock/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/coap/libcoap/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/nghttp/nghttp2/lib/includes"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp-tls/esp-tls-crypto"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_adc_cal/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_hid/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/tcp_transport/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_http_server/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_https_ota/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_lcd/interface"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protobuf-c/protobuf-c"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/common"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/security"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/protocomm/include/transports"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mdns/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_local_ctrl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/sdmmc/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_serial_slave_link/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/esp_websocket_client/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/expat/expat/lib"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/expat/port/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wear_levelling/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/diskio"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/vfs"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/fatfs/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/freemodbus/common/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/idf_test/include/esp32"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/jsmn/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/json/cJSON"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/libsodium/src/libsodium/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/libsodium/port_include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/mqtt/esp-mqtt/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/openssl/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/perfmon/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/spiffs/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/ulp/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-espidf/components/wifi_provisioning/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncTCP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESP Async WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Homie/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/AzureIoT/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
@@ -737,33 +1054,34 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/tool-unity"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.2122043341" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_GNU_SOURCE"/>
+									<listOptionValue builtIn="false" value="IDF_VER=&quot;4.4.0&quot;"/>
+									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
+									<listOptionValue builtIn="false" value="_POSIX_READER_WRITER_LOCKS"/>
 									<listOptionValue builtIn="false" value="PLATFORMIO=50204"/>
 									<listOptionValue builtIn="false" value="ARDUINO_ESP32_DEV"/>
+									<listOptionValue builtIn="false" value="ARDUINO"/>
 									<listOptionValue builtIn="false" value="ESP32"/>
-									<listOptionValue builtIn="false" value="ESP_PLATFORM"/>
-									<listOptionValue builtIn="false" value="F_CPU=240000000L"/>
-									<listOptionValue builtIn="false" value="HAVE_CONFIG_H"/>
-									<listOptionValue builtIn="false" value="MBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO=10805"/>
-									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP32"/>
-									<listOptionValue builtIn="false" value="ARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
-									<listOptionValue builtIn="false" value="ARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+									<listOptionValue builtIn="false" value="CORE_DEBUG_LEVEL=6"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.207004812" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -786,7 +1104,7 @@
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
-			<resource resourceType="PROJECT" workspacePath="/esp32doit-devkit-v1"/>
+			<resource resourceType="PROJECT" workspacePath="/esp32-v2-upstream"/>
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>

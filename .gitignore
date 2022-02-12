@@ -1,1 +1,4 @@
 .pio
+
+# FreeCAD backup
+*.FCStd?   
