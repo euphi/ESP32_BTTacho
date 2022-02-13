@@ -5,12 +5,57 @@
  *      Author: ian
  */
 
-#ifndef SRC_BLEHEARTRATE_H_
-#define SRC_BLEHEARTRATE_H_
+#pragma once
 
-class BleHeartRate {
+#include <vector> // Arduino BLE somehow misses this include. So add it here.
+#include <BLEScan.h>
+#include <BLEUtils.h>
+
+
+
+class BleHeartRate: public BLEAdvertisedDeviceCallbacks {
 public:
 	BleHeartRate();
-};
+	void setup();
+	void loop();
 
-#endif /* SRC_BLEHEARTRATE_H_ */
+	// TypeDef
+	typedef struct {
+	  char ID[20];
+	  uint16_t HRM;
+	}HRM;
+
+	// Interface BLEAdvertisedDeviceCallbacks
+	void onResult(BLEAdvertisedDevice advertisedDevice);
+
+	// Interface ??
+	void notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify);
+
+	const HRM& getHrm() const {return hrm;}
+
+	bool isConnected() const {return pClient ? pClient->isConnected() : false ;}
+
+	// BLE
+	// The remote HRM service we wish to connect to.
+	static const BLEUUID serviceUUID;
+	// The HRM characteristic of the remote service we are interested in.
+	static const BLEUUID charUUID;
+
+
+private:
+	HRM hrm;
+
+	bool connectToServer(BLEAddress pAddress);
+
+	static const int scanTime = 5; //In seconds
+	BLEScan* pBLEScan;
+
+
+	BLEAddress *pServerAddress;
+	BLEClient  *pClient;
+	bool doConnect = false;
+	bool connected = false;
+	bool notification = false;
+	BLERemoteCharacteristic* pRemoteCharacteristic;
+
+};

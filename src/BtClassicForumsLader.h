@@ -14,6 +14,8 @@ public:
 	BtClassicForumsLader();
 	void loop();
 
+	void connect();
+
 	static constexpr float dist_per_pulse = 2.155 / 14; // Umfang / Polpaare
 	static constexpr float hmh_per_pulse = 2.155 / 14 * 3600 * 0.001 * 10; // Umfang / Polpaare * 3600 sec/hour * 0.001 m/km * 10 (100m/km)
 
@@ -48,11 +50,16 @@ private:
 	void updateDataFromString();
 	void readFromSerial();
 
+	bool connected = false;
+
+	static uint8_t address[6];
+
+
 public:
-	float getVoltageTotal() { return ( (batterie[0]+ batterie[1] + batterie[2]) / 1000.0);}
-	float getSpeed() { return (speed / 10.0);}
-	float getGradient() { return (gradient / 10.0);}
-	float getHeight() { return (height / 10.0);}
+	float getVoltageTotal() const { return ( (batterie[0]+ batterie[1] + batterie[2]) / 1000.0);}
+	float getSpeed() const { return (speed / 10.0);}
+	float getGradient() const { return (gradient / 10.0);}
+	float getHeight() const { return (height / 10.0);}
 
 	int8_t getStage() const {return stufe;}
 };

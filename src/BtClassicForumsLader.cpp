@@ -9,8 +9,45 @@
 
 #include <inttypes.h>
 
+// static
+uint8_t BtClassicForumsLader::address[6] = { 0x20, 0x13, 0x01, 0x18, 0x02, 0x26 }; // Forumslader
+
+
 BtClassicForumsLader::BtClassicForumsLader() {
 	// TODO Auto-generated constructor stub
+
+}
+
+void BtClassicForumsLader::connect() {
+
+#ifdef BT_SCAN
+  Serial.print("Starting discoverAsync...");
+  if (SerialBT.discoverAsync(btAdvertisedDeviceFound)) {
+      Serial.println("Findings will be reported in \"btAdvertisedDeviceFound\"");
+      delay(10000);
+      Serial.print("Stopping discoverAsync... ");
+      SerialBT.discoverAsyncStop();
+      Serial.println("stopped");
+  } else {
+      Serial.println("Error on discoverAsync f.e. not workin after a \"connect\"");
+  }
+#endif
+
+	  SerialBT.begin("ESP32test", true); //Bluetooth device name
+	  SerialBT.enableSSP();
+	  SerialBT.setPin("1234");
+	  //SerialBT.setPin("0000");
+	  Serial.println("The device started in master mode, make sure remote BT device is on!");
+
+	  SerialBT.setPin("1234");
+	  connected = SerialBT.connect(address);
+	  if (connected) {
+		  Serial.println("Connect success");
+	  } else {
+	    while(!SerialBT.connected(10000)) {
+	      Serial.println("Failed to connect. Make sure remote device is available and in range, then restart app.");
+	    }
+	  }
 
 }
 

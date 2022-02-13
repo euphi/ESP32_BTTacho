@@ -18,22 +18,26 @@ _See below on information how to compile_
 [ ] Streamline OLED display (larger font for speed etc.)
 [ ] Support for  Cadence BLE device
 [ ] Headlights (some bright LED) as additional "off-road" light
-** the 12V supply allow it to add some very bright leds
+
+* the 12V supply allow it to add some very bright leds
+
 [ ] 6V bike light output (6V for my BM bike lamps)
-** currently it is in parallel to the Forumslader which means the battery can't be charged while light is on
+
+* currently it is in parallel to the Forumslader which means the battery can't be charged while light is on
+
 [ ] Main switch
+
 [ ] automatic stopwatch timer (cycling, stopping, resting, ...)
+
 
 ## Ideas
 
 * add gyro
-** alarm system
-** maybe useful to improve statistics, e.g. "lost time due to traffic"
-
+    * alarm system
+    * maybe useful to improve statistics, e.g. "lost time due to traffic"
 * add bell/sound
-** for alarm system
-** as bell/horn
-
+    * for alarm system
+    * as bell/horn
 * add more lights as ambient light (useful when locking your bike at night or at campsite etc.)
 
 ## Possible extensions (not in my scope for now):
@@ -56,5 +60,5 @@ However, there are some issues with the Arduino ESP32 framework right now, so
 
 * the configuration in `platformio.ini` is a little bit _weird_
 * For now, you need to patch `BluetoothSerial.cpp` in your platformio-packages (`~/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src`)
-** Probably I will fork the framework so it is installable automatically
-** see `framework-arduino-esp32-BTSerial.patch`
+    * Probably I will fork the framework so it is installable automatically
+    * see `framework-arduino-esp32-BTSerial.patch`
