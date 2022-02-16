@@ -17,6 +17,17 @@ const BLEUUID BleHeartRate::serviceUUID = BLEUUID((uint16_t)0x180D);
 const BLEUUID BleHeartRate::charUUID = BLEUUID((uint16_t)0x2A37);
 
 
+// --------------------------------------------------------------------------------------------------------------------
+// FIXME: Should be part of class
+bool scanning = false;
+void scanCompleteCB(BLEScanResults result) {
+	Serial.print("BLE scan completed: ");
+	Serial.println(result.getCount());
+	scanning = false;
+}
+// --------------------------------------------------------------------------------------------------------------------
+
+
 BleHeartRate::BleHeartRate() {
 	// empty ctor
 }
@@ -28,6 +39,12 @@ void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 	if (advertisedDevice.haveServiceUUID()  && advertisedDevice.getServiceUUID().equals(serviceUUID)) {
 		Serial.print(F("Found our device!  address: "));
 		advertisedDevice.getScan()->stop();
+
+		//Also stop pBLEScan--- // TODO: Check if correct. Stopped twice?
+		pBLEScan->stop();
+		pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
+		scanning = false;
+
 		pServerAddress = new BLEAddress(advertisedDevice.getAddress());
 		doConnect = true;
 	} // Found our server
@@ -39,7 +56,7 @@ void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 // BLE notifyCallback
 //--------------------------------------------------------------------------------------------
 void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify) {
-
+  lastUpdate = millis();
   if (bitRead(pData[0], 0) == 1) {
     Serial.println(F("16bit HeartRate Detected"));
   } else {
@@ -94,8 +111,6 @@ void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteri
 
 }
 
-
-
 void BleHeartRate::setup() {
   BLEDevice::init("ESP32_BTTacho BLE");
   pBLEScan = BLEDevice::getScan(); //create new scan
@@ -103,26 +118,35 @@ void BleHeartRate::setup() {
   pBLEScan->setActiveScan(true); //active scan uses more power, but get results faster
   pBLEScan->setInterval(100);
   pBLEScan->setWindow(99);  // less or equal setInterval value
+  pBLEScan->start(scanTime, scanCompleteCB); // Non-Blocking
+  scanning = true;
 }
 
 void BleHeartRate::loop() {
+	if (lastUpdate + 10000 < millis()) {	// Timeout
+		hrm.HRM = 0;
+	}
 	if (doConnect) {
 	    if (connectToServer(*pServerAddress)) {
 	      Serial.println(F("We are now connected to the BLE HRM"));
 	      connected = true;
 	    } else {
-	      Serial.println(F("We have failed to connect to the HRM; there is nothin more we will do."));
+	      Serial.println(F("We have failed to connect to the HRM; there is nothing more we will do."));
 	    }
 	    doConnect = false;
 	} else if (connected) {
-		//if (!pClient->isConnected()) pClient->connect(*pServerAddress); // FIXME: Reconnect is not that easy ...
+		if (!pClient->isConnected()) {
+			Serial.println("No longer connected - restart scanning");
+			connected = false;
+			hrm.HRM = 0;
+		}
 		yield();
-	} else {
-		BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
-		Serial.print("Devices found: ");
-		Serial.println(foundDevices.getCount());
-		Serial.println("Scan done!");
-		pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
+	} else if (!scanning) {
+		pBLEScan->stop();
+		pBLEScan->clearResults();
+		Serial.println("BLE: Restart scan");
+		pBLEScan->start(scanTime, scanCompleteCB); // Non-Blocking
+		scanning = true;
 	}
 }
 
@@ -134,8 +158,12 @@ bool BleHeartRate::connectToServer(BLEAddress pAddress) {
     Serial.print(F("Forming a connection to "));
     Serial.println(pAddress.toString().c_str());
 
-    pClient  = BLEDevice::createClient();
-    Serial.println(F(" - Created client"));
+    if (!pClient) {
+    	pClient  = BLEDevice::createClient();
+    	Serial.println(F(" - Created client"));
+    } else {
+    	Serial.println(F(" - reusing existing client"));
+    }
 
     // Connect to the HRM BLE Server.
     pClient->connect(pAddress);
@@ -149,9 +177,6 @@ bool BleHeartRate::connectToServer(BLEAddress pAddress) {
       return false;
     }
     Serial.println(F(" - Found our service"));
-
-
-
 
     // Obtain a reference to the characteristic in the service of the remote BLE server.
     pRemoteCharacteristic = pRemoteService->getCharacteristic(charUUID);

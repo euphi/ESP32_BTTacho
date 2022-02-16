@@ -13,9 +13,32 @@
 uint8_t BtClassicForumsLader::address[6] = { 0x20, 0x13, 0x01, 0x18, 0x02, 0x26 }; // Forumslader
 
 
+#ifdef BT_SCAN
+#error "FIXME: Should be part of class"
+void btAdvertisedDeviceFound(BTAdvertisedDevice* pDevice) {
+	Serial.printf("ℹ️ Found a classic BT device asynchronously: %s\n", pDevice->toString().c_str());
+}
+#endif
+
+
 BtClassicForumsLader::BtClassicForumsLader() {
 	// TODO Auto-generated constructor stub
 
+}
+
+CRGB BtClassicForumsLader::getStateLED() {
+	CRGB led = CRGB::DarkOliveGreen;
+	uint16_t sec = millis() / 1000;
+	if (cstate == STATE_CONNECTING) {
+			if (sec % 2) led = CRGB::Blue;
+	} else if (timeout < 20) {
+		led = (sec % 2) ? CRGB::Red : CRGB::Orange;
+	} else if (timeout < 20) {
+		led = (sec % 2) ? CRGB::Orange : CRGB::Yellow;
+	} else if (timeout < 180) {
+		led = CRGB::Orange;
+	}
+	return led;
 }
 
 void BtClassicForumsLader::connect() {
@@ -34,7 +57,7 @@ void BtClassicForumsLader::connect() {
 #endif
 
 	  SerialBT.begin("ESP32test", true); //Bluetooth device name
-	  SerialBT.enableSSP();
+	  //SerialBT.enableSSP();
 	  SerialBT.setPin("1234");
 	  //SerialBT.setPin("0000");
 	  Serial.println("The device started in master mode, make sure remote BT device is on!");
@@ -42,7 +65,8 @@ void BtClassicForumsLader::connect() {
 	  SerialBT.setPin("1234");
 	  connected = SerialBT.connect(address);
 	  if (connected) {
-		  Serial.println("Connect success");
+		  Serial.println("Connecting ...");
+		  cstate = STATE_CONNECTING;
 	  } else {
 	    while(!SerialBT.connected(10000)) {
 	      Serial.println("Failed to connect. Make sure remote device is available and in range, then restart app.");
@@ -52,6 +76,7 @@ void BtClassicForumsLader::connect() {
 }
 
 void BtClassicForumsLader::updateDataFromString() {
+	lastUpdate = millis();
 	Serial.print("ℹ️ Rvcd string from BT: ");
 	Serial.println(bufferSerial);
 	int8_t scanCt = 0;
@@ -59,7 +84,6 @@ void BtClassicForumsLader::updateDataFromString() {
 	if (bufferSerial.startsWith("$FL")) {
 		uint16_t pulses;
 		int8_t cons_on_off;
-		int16_t timeout;
 		int32_t timecounter;
 		int32_t pulsecounter;
 		int32_t micropulsecounter;
@@ -103,10 +127,33 @@ void BtClassicForumsLader::readFromSerial() {
 			updateDataFromString();
 		}
 		bufferSerial += read;
-
 	}
 }
 
 void BtClassicForumsLader::loop() {
+	static uint16_t loop_counter=0;
+	loop_counter++;
+	if (cstate == STATE_CONNECTING) {
+		if (SerialBT.connected(100)) {
+			Serial.println("Connect success");
+			cstate = STATE_CONNECTED;
+			lastUpdate = millis();
+		} else if  (lastUpdate + 10000 < millis()) {
+			Serial.println("Connection establishment timed out");
+			cstate = STATE_DISCONNECTED;
+			lastUpdate = millis();
+		}
+	} else if (cstate == STATE_CONNECTED && lastUpdate + 10000 < millis()) {	// Timeout
+		Serial.println("Lost connection to Forumslader");
+		speed = 0;
+		for (uint_fast8_t i = 0; i < 4; i++) batterie[i] = 0;
+		batt_current = 0;
+		cons_current = 0;
+		cstate = STATE_DISCONNECTED;
+		lastUpdate = millis();
+	} else if (cstate == STATE_DISCONNECTED && lastUpdate + 15000 < millis()) {
+		connect();
+	}
+
 	readFromSerial();
 }

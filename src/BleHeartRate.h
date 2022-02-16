@@ -25,6 +25,16 @@ public:
 	  uint16_t HRM;
 	}HRM;
 
+	enum {
+		IDLE,
+		SCAN_RUN,
+		SCAN_STOP,
+		DEV_KNOWN,
+		CONNECTED
+	} CONN_STATE;
+
+	unsigned long lastUpdate = 0;
+
 	// Interface BLEAdvertisedDeviceCallbacks
 	void onResult(BLEAdvertisedDevice advertisedDevice);
 
