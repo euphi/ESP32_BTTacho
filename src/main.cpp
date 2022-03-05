@@ -1,6 +1,7 @@
 //#define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
 //#include "esp_log.h"
 
+#include <Arduino.h>
 
 #include <BtClassicForumsLader.h>
 BtClassicForumsLader forumslader;
@@ -23,6 +24,9 @@ CRGB battledsteps[8];
 #include <esp32_touch.hpp>
 ESP32Touch touchpins;
 bool touch[4] = {false, false, false, false};
+
+#include <FS.h>
+#include <SPIFFS.h>
 
 // Icons TODO: Use own class/modules for graphics
 static const unsigned char icon_heart[] PROGMEM = {
@@ -49,7 +53,16 @@ const struct {
 	CRGB leds[5];
 } hr_leds[] = { { 70, {CRGB::Turquoise, CRGB::Black,     CRGB::Black,   CRGB::Black,   CRGB::Black  }},
 		        { 80, {CRGB::Turquoise, CRGB::Turquoise, CRGB::Black,   CRGB::Black,   CRGB::Black  }},
-				{255, {CRGB::Turquoise, CRGB::Turquoise, CRGB::Orange,  CRGB::Orange,  CRGB::Red    }}
+				{ 80, {CRGB::Turquoise, CRGB::Turquoise, CRGB::Black,   CRGB::Black,   CRGB::Black  }},
+				{ 90, {CRGB::Green, CRGB::Green, CRGB::Black,   CRGB::Black,   CRGB::Black  }},
+				{ 100, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Black,   CRGB::Black  }},
+				{ 110, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::GreenYellow,   CRGB::Black  }},
+				{ 120, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::Black  }},
+				{ 130, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::Black  }},
+				{ 150, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::GreenYellow  }},
+				{ 160, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::Yellow  }},
+				{ 170, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Orange,   CRGB::Orange  }},
+				{255, {CRGB::GreenYellow, CRGB::GreenYellow, CRGB::Orange,  CRGB::Orange,  CRGB::Red    }}
 };
 
 void setup()
@@ -80,6 +93,12 @@ void setup()
 
   forumslader.connect();
   BLEhrm.setup();
+
+//  LittleFS.begin(true);
+//  Serial.printf("LittleFS: %d of %d\n", LittleFS.usedBytes(), LittleFS.totalBytes());
+  SPIFFS.begin(true);
+  Serial.printf("LittleFS: %d of %d\n", SPIFFS.usedBytes(), SPIFFS.totalBytes());
+
 
   //TOuch
   //touchSetCycles(0x2000, 0x2000);

@@ -81,6 +81,8 @@ void BtClassicForumsLader::updateDataFromString() {
 	Serial.println(bufferSerial);
 	int8_t scanCt = 0;
 	float speed_f = NAN;
+	uint8_t scanFLC_id;
+	uint32_t scanFLC_buffer[5];
 	if (bufferSerial.startsWith("$FL")) {
 		uint16_t pulses;
 		int8_t cons_on_off;
@@ -101,13 +103,24 @@ void BtClassicForumsLader::updateDataFromString() {
 			if (scanCt != 4) Serial.println("❌ Not all fields scanned");
 			Serial.printf("[%x] Temp: %.02f\tPressure: %.01f\tHeight: %.01f\tGradient: %d\n", scanCt, temperature/10.0, pressure/100.0, height/10.0, gradient);
 			break;
-		case 'C':   // $FLC,0,0,0,200,3798,26;
-					// $FLC,1,0,0,200,3798,26;
-				    // $FLC,2,478561,0,200,0,200;
-					// $FLC,3,8126,0,0,1799,0;
-			      	// $FLC,4,48,48,0,0,0;
-				  	// $FLC,5,1870,100,1667,36,73053775;
+		case 'C':
+			scanCt = sscanf(bufferSerial.c_str(), "$FLC,%hhd,%d,%d,%d,%d,%d\n", &scanFLC_id, &scanFLC_buffer[0],&scanFLC_buffer[1],&scanFLC_buffer[2],&scanFLC_buffer[3],&scanFLC_buffer[4]);
+			switch (scanFLC_id) {
+			case 0: // $FLC,0,0,0,200,3798,26;
+				break;
+			case 1: // $FLC,1,0,0,200,3798,26;
+				break;
+			case 2: // $FLC,2,478561,0,200,0,200;
+				break;
+			case 3: // $FLC,3,8126,0,0,1799,0;
+				break;
+			case 4: // $FLC,4,48,48,0,0,0;
+				break;
+			case 5: // $FLC,5,1870,100,1667,36,73053775;   $FLC,5,1921,99,1667,37,74684176;  // StartCounter, Batt%, fullCap, CycleCount, Acc
+				batt_perc = scanFLC_buffer[1];
+				break;
 
+			}
 			// Ignore for now (Total data)
 			break;
 		default:
@@ -146,7 +159,7 @@ void BtClassicForumsLader::loop() {
 	} else if (cstate == STATE_CONNECTED && lastUpdate + 10000 < millis()) {	// Timeout
 		Serial.println("Lost connection to Forumslader");
 		speed = 0;
-		for (uint_fast8_t i = 0; i < 4; i++) batterie[i] = 0;
+		for (uint_fast8_t i = 0; i < 3; i++) batterie[i] = 0;
 		batt_current = 0;
 		cons_current = 0;
 		cstate = STATE_DISCONNECTED;

@@ -12,7 +12,6 @@
 //#include <pixeltypes.h>
 #include <FastLED.h>
 
-
 class BtClassicForumsLader {
 public:
 	BtClassicForumsLader();
@@ -72,6 +71,7 @@ private:
 	uint16_t batterie[3];	// in mV
 	int16_t  batt_current;	// in mA
 	int16_t  cons_current;  // in mA
+	uint8_t  batt_perc;		// in %
 	int16_t int_temp;		// in 1/10°C (or K?)
 	int16_t timeout;
 
@@ -81,7 +81,7 @@ private:
 	int16_t  gradient;		// in ‰
 
 
-	uint16_t unknown[8];	// yet unkown values
+	//uint16_t unknown[8];	// yet unkown values
 
 	String bufferSerial;
 
