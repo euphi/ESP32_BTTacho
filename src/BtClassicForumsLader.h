@@ -107,5 +107,9 @@ public:
 
 
 	int8_t getStage() const {return stufe;}
+
+	int16_t getBattCurrent() const {
+		return batt_current;
+	}
 };
 

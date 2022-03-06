@@ -25,8 +25,10 @@ CRGB battledsteps[8];
 ESP32Touch touchpins;
 bool touch[4] = {false, false, false, false};
 
-#include <FS.h>
-#include <SPIFFS.h>
+//SD
+#include <SDLogger.h>
+
+SDLogger sdl;
 
 // Icons TODO: Use own class/modules for graphics
 static const unsigned char icon_heart[] PROGMEM = {
@@ -65,6 +67,20 @@ const struct {
 				{255, {CRGB::GreenYellow, CRGB::GreenYellow, CRGB::Orange,  CRGB::Orange,  CRGB::Red    }}
 };
 
+
+void task_writeLog(void * p) {
+	Serial.println("🏃 - Task LogWriter started");
+	while(true) {
+		Serial.print("Write Log - Stack: ");
+		Serial.println(uxTaskGetStackHighWaterMark(NULL));  // DEBUG
+
+		sdl.appendLog(forumslader.getSpeed(), 0, forumslader.getGradient(), 0, forumslader.getHeight(), BLEhrm.getHrm().HRM);
+
+
+		vTaskDelay(5000 / portTICK_PERIOD_MS);			// Sleep 5sec
+	}
+}
+
 void setup()
 {
   Serial.begin(115200);
@@ -96,8 +112,6 @@ void setup()
 
 //  LittleFS.begin(true);
 //  Serial.printf("LittleFS: %d of %d\n", LittleFS.usedBytes(), LittleFS.totalBytes());
-  SPIFFS.begin(true);
-  Serial.printf("LittleFS: %d of %d\n", SPIFFS.usedBytes(), SPIFFS.totalBytes());
 
 
   //TOuch
@@ -128,7 +142,17 @@ void setup()
   });
 
   touchpins.begin();
+
+  sdl.setup();
+  xTaskCreate(task_writeLog, "LogWriter SD",
+    2048,            // Stack size (bytes)
+    NULL,            // Parameter to pass
+    1,               // Task priority
+    NULL             // Task handle
+  );
 }
+
+
 
 void loop() {
 	static uint32_t lastDisplayUpdate = 0;
@@ -181,13 +205,13 @@ void loop() {
 
 		// Power
 		float power = forumslader.getDynPower();
-		int8_t powerStep = floor(power * 8 / 10.0); // 8 LEDs-Steps, 10 W peak
+		int8_t powerStep = floor(power); // * 8 / 8.0); // 8 LEDs-Steps, 8 W peak
 		if (powerStep < 0) powerStep = 0;
 		if (powerStep > 7) powerStep = 7;
 		leds[0] = powerledsteps[powerStep];
 
 		float cur = forumslader.getBatCurrent();
-		int8_t batStep = floor((cur + 2.0) * 8 / 4.0); // 8 LEDs-Steps, -2A - +2A (4A Diff)
+		int8_t batStep = floor((cur + 1.0) * 8 / 2.0); // 8 LEDs-Steps, -1A - +1A (2A Diff)
 		if (batStep < 0) batStep = 0;
 		if (batStep > 7) batStep = 7;
 		leds[1] = battledsteps[batStep];
@@ -211,9 +235,16 @@ void loop() {
 		display.setTextAlignment(TEXT_ALIGN_RIGHT);
 		display.drawString(60, 16, String(forumslader.getGradient(), 1)+"%");
 
+		// ConsCurrent - TODO: Extract method
+		display.setFont(ArialMT_Plain_16);
+		display.setTextAlignment(TEXT_ALIGN_LEFT);
+		display.drawString(64, 16, String(forumslader.getConsCurrent(), 1)+"mA");
+
+
 
 		// HRM
 		display.setFont(ArialMT_Plain_16);
+		display.setTextAlignment(TEXT_ALIGN_RIGHT);
 		display.drawString(60, 32, String(BLEhrm.getHrm().HRM)+"bpm");
 
 		uint16_t hr = BLEhrm.getHrm().HRM;
