@@ -4,7 +4,7 @@ import struct
 
 from array import array
 
-fname = 'LOG_0001.BIN'
+fname = 'LOG_0005.BIN'
 format_struct="<LffffIBxxx"
 format_names=("Timestamp", "Speed", "Temperatur", "Gradient", "Höhe", "distance", "Puls")
 print(str(struct.calcsize(format_struct)) + u" bytes needed per Set")

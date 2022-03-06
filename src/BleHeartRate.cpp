@@ -64,11 +64,11 @@ void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteri
   }
 
   uint32_t* pData32 = (uint32_t*)pData;
-  hrm.HRM = pData[1];
-  Serial.printf("Data with length %d bytes: %d [%x]\n", length, hrm.HRM, *pData32);
+  hr = pData[1];
+  Serial.printf("Data with length %d bytes: %d [%x]\n", length, hr, *pData32);
   if (length == 2) {
     Serial.print("Heart Rate ");
-    Serial.print(hrm.HRM, DEC);
+    Serial.print(hr, DEC);
     Serial.println("bpm");
   }
   //
@@ -124,7 +124,7 @@ void BleHeartRate::setup() {
 
 void BleHeartRate::loop() {
 	if (lastUpdate + 10000 < millis()) {	// Timeout
-		hrm.HRM = 0;
+		hr = 0;
 	}
 	if (doConnect) {
 	    if (connectToServer(*pServerAddress)) {
@@ -138,7 +138,7 @@ void BleHeartRate::loop() {
 		if (!pClient->isConnected()) {
 			Serial.println("No longer connected - restart scanning");
 			connected = false;
-			hrm.HRM = 0;
+			hr = 0;
 		}
 		yield();
 	} else if (!scanning) {

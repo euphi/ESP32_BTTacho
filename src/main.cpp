@@ -74,7 +74,7 @@ void task_writeLog(void * p) {
 		Serial.print("Write Log - Stack: ");
 		Serial.println(uxTaskGetStackHighWaterMark(NULL));  // DEBUG
 
-		sdl.appendLog(forumslader.getSpeed(), 0, forumslader.getGradient(), 0, forumslader.getHeight(), BLEhrm.getHrm().HRM);
+		sdl.appendLog(forumslader.getSpeed(), 0, forumslader.getGradient(), 0, forumslader.getHeight(), BLEhrm.getHR());
 
 
 		vTaskDelay(5000 / portTICK_PERIOD_MS);			// Sleep 5sec
@@ -161,7 +161,7 @@ void loop() {
 	forumslader.loop();
 	BLEhrm.loop();
 	yield();
-	if (lastDisplayUpdate + 100 < millis()) {
+	if (lastDisplayUpdate + 100 < millis()) {			// 100 ms Cycle
 		lastDisplayUpdate = millis();
 		ani_counter++;
 		display.clear();
@@ -218,7 +218,7 @@ void loop() {
 
 		leds[2] = CRGB::Black;
 
-		if (ani_counter % 10 == 0) Serial.printf("Steps: Power: %d (%.1fW), BAT: %d (%.2fA)\n", powerStep, power, batStep, cur);
+		if (ani_counter % 10 == 0) Serial.printf("Steps: Power: %d (%.1fW), BAT: %d (%.2fA)\n", powerStep, power, batStep, cur); // 10 * 190ms = 1sec cycle
 
 		// Level - TODO: Extract method
 		int8_t stage = forumslader.getStage();
@@ -240,21 +240,12 @@ void loop() {
 		display.setTextAlignment(TEXT_ALIGN_LEFT);
 		display.drawString(64, 16, String(forumslader.getConsCurrent(), 1)+"mA");
 
-
-
 		// HRM
 		display.setFont(ArialMT_Plain_16);
 		display.setTextAlignment(TEXT_ALIGN_RIGHT);
-		display.drawString(60, 32, String(BLEhrm.getHrm().HRM)+"bpm");
+		display.drawString(60, 32, String(BLEhrm.getHR())+"bpm");
 
-		uint16_t hr = BLEhrm.getHrm().HRM;
-//		int8_t hrm_step = (hr-45) / 9;  //FIXME: test for quick reaction at home
-//		if (hrm_step < 0) hrm_step=0; //tot?
-//		if (hrm_step > 5) hrm_step=5;
-//		for (uint_fast8_t i = 0; i < 5 ; i++) {
-//			leds[7-i] = (hrm_step >= i) ? CRGB::BlueViolet : CRGB::Black;
-//		}
-
+		uint8_t hr = BLEhrm.getHR();
 		for (uint_fast8_t i = 0; i < sizeof(hr_leds[0].leds); i++) {
 			if (hr < hr_leds[i].max) {
 				for (uint_fast8_t l = 0; l < 5 ; l++) {
@@ -263,17 +254,16 @@ void loop() {
 				break;
 			}
 		}
-		leds[2] = forumslader.getStateLED();
 
-
-		if (hr == 0) leds[7] = CRGB::Orange;
+		// State LED
+		leds[2] = forumslader.getStateLED();  // FL
+		if (hr == 0) leds[7] = CRGB::Orange;  // HR
 		if (!BLEhrm.isConnected()) leds[7] = CRGB::Red;
 
 		// write the buffer to the display and update LEDs
 		display.display();
 		FastLED.show();
-		if (ani_counter % 10 == 0) touchpins.diagnostics();
-
+		if (ani_counter % 50 == 0) touchpins.diagnostics();		// 50 * 190ms = 5sec cycle
 	}
-	delay(10);
+	delay(10);		// minimum 10ms pause between cycles
 }

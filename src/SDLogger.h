@@ -35,6 +35,8 @@ private:
 	bool createDir(const char* dirname);
 
 	String filename;
+	unsigned int max_number = 0;
+
 };
 
 #endif /* SRC_SDLOGGER_H_ */

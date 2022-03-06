@@ -43,9 +43,19 @@ void SDLogger::listDir(const char * dirname, uint8_t levels){
       Serial.print(file.name());
       Serial.print("  SIZE: ");
       Serial.println(file.size());
+      unsigned int filenumber;
+      if (sscanf(file.name(),"LOG_%4u.BIN", &filenumber) == 1) {
+    	  Serial.printf("File number %d.\n", filenumber);
+    	  if (filenumber > max_number) max_number = filenumber;
+      }
     }
     file = root.openNextFile();
   }
+    Serial.printf("!!! - MAX File number %d.\n", max_number++);
+    char buffer[24];
+    snprintf(buffer, sizeof(buffer), "/BTTacho/LOG_%04u.BIN", max_number);
+    filename = buffer;
+    Serial.printf("!!! - New file name %s.\n", filename.c_str()); ;
 }
 
 
@@ -57,15 +67,16 @@ void SDLogger::appendLog(float speed, float temp, float gradient, uint32_t dista
 	b.grad = gradient;
 	b.dist_m = distance;
 	b.height = height;
+	b.hr = hr;
 
 	File f = SD.open(filename, FILE_APPEND, true);
-	  if(!f){
-	    Serial.println("Failed to open file for appending");
-	    return;
-	  }
-//	  f.write(static_cast<byte*>(&b), sizeof(b));
-	  f.write((byte*) &b, sizeof(b));
-
+	if (!f) {
+		Serial.println("Failed to open file for appending");
+		return;
+	}
+	f.write((byte*) &b, sizeof(b));
+	f.flush();
+	f.close();
 }
 
 void SDLogger::deleteFile(const char * path){
@@ -110,8 +121,6 @@ void SDLogger::setup(){
 
   createDir("/BTTacho");
   listDir("/BTTacho", 0);
-  filename = "/BTTacho/log_0001.bin";
-
 }
 
 bool SDLogger::createDir(const char *dirname) {

@@ -20,10 +20,10 @@ public:
 	void loop();
 
 	// TypeDef
-	typedef struct {
-	  char ID[20];
-	  uint16_t HRM;
-	}HRM;
+//	typedef struct {
+//	  char ID[20];
+//	  uint16_t HRM;
+//	}HRM;
 
 	enum {
 		IDLE,
@@ -41,7 +41,7 @@ public:
 	// Interface ??
 	void notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify);
 
-	const HRM& getHrm() const {return hrm;}
+	uint8_t getHR() const {return hr;}
 
 	bool isConnected() const {return pClient ? pClient->isConnected() : false ;}
 
@@ -53,7 +53,7 @@ public:
 
 
 private:
-	HRM hrm;
+	uint8_t hr;
 
 	bool connectToServer(BLEAddress pAddress);
 

@@ -1,4 +1,7 @@
 .pio
 
 # FreeCAD backup
-*.FCStd?   
+*.FCStd?
+
+# Example files
+Tools/*.BIN 
