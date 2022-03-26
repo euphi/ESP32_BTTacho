@@ -1,7 +1,13 @@
 .pio
+.~*
 
 # FreeCAD backup
 *.FCStd?
 
+#Mechanics
+*.amf
+*.FCStd1
+
 # Example files
 Tools/*.BIN 
+Tools/output.csv

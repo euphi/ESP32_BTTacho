@@ -30,6 +30,13 @@ bool touch[4] = {false, false, false, false};
 
 SDLogger sdl;
 
+
+// Inputs / Outputs
+
+// D34 Q Taster (LED)
+// D35 I Taster
+// D4 I_Ser LED-Strip 8xWS2812
+
 // Icons TODO: Use own class/modules for graphics
 static const unsigned char icon_heart[] PROGMEM = {
     0b00000000, 0b00000000, //
@@ -86,7 +93,7 @@ void setup()
   Serial.begin(115200);
 
   // Initialise FastLED
-  FastLED.addLeds<NEOPIXEL, 5>(leds, 8);
+  FastLED.addLeds<NEOPIXEL, 4>(leds, 8);
   FastLED.setBrightness(64);
   FastLED.setCorrection(TypicalSMD5050);
 
@@ -113,6 +120,8 @@ void setup()
 //  LittleFS.begin(true);
 //  Serial.printf("LittleFS: %d of %d\n", LittleFS.usedBytes(), LittleFS.totalBytes());
 
+  pinMode(33, INPUT_PULLUP);
+  pinMode(32, OUTPUT);
 
   //TOuch
   //touchSetCycles(0x2000, 0x2000);
@@ -178,6 +187,12 @@ void loop() {
 				display.drawCircle(21 + i * 8, 4, 4);
 			}
 		}
+
+		digitalWrite(32, digitalRead(33));
+		if (ani_counter % 10 == 0) Serial.println(digitalRead(33) ? "Taster pressed" : "Taster released");
+		//digitalWrite(32, ((ani_counter / 10) % 2) == 0);
+
+
 
 //		display.setFont(ArialMT_Plain_10);
 //		display.setTextAlignment(TEXT_ALIGN_LEFT);
