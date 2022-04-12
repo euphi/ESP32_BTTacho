@@ -11,11 +11,11 @@
 #include <BLEScan.h>
 #include <BLEUtils.h>
 
-
+#include <Statistics.h>
 
 class BleHeartRate: public BLEAdvertisedDeviceCallbacks {
 public:
-	BleHeartRate();
+	BleHeartRate(Statistics& _stats);
 	void setup();
 	void loop();
 
@@ -25,13 +25,13 @@ public:
 //	  uint16_t HRM;
 //	}HRM;
 
-	enum {
-		IDLE,
-		SCAN_RUN,
-		SCAN_STOP,
-		DEV_KNOWN,
-		CONNECTED
-	} CONN_STATE;
+//	enum {
+//		IDLE,
+//		SCAN_RUN,
+//		SCAN_STOP,
+//		DEV_KNOWN,
+//		CONNECTED
+//	} CONN_STATE;
 
 	unsigned long lastUpdate = 0;
 
@@ -53,6 +53,7 @@ public:
 
 
 private:
+	Statistics& stats;
 	uint8_t hr;
 
 	bool connectToServer(BLEAddress pAddress);
@@ -67,5 +68,6 @@ private:
 	bool connected = false;
 	bool notification = false;
 	BLERemoteCharacteristic* pRemoteCharacteristic;
+	bool simulation;
 
 };

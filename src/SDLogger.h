@@ -10,13 +10,14 @@
 
 #include "FS.h"
 #include "SD.h"
+
 class SDLogger {
 public:
 	SDLogger() {}	;
 	void setup();
 
 	struct LogData {
-		unsigned long timestamp;			//        4
+		time_t timestamp;					//        4
 		float speed;						// + 4 =  8
 		float temp;  						// + 4 = 12
 		float grad;							// + 4 = 16

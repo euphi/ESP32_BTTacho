@@ -28,7 +28,7 @@ void scanCompleteCB(BLEScanResults result) {
 // --------------------------------------------------------------------------------------------------------------------
 
 
-BleHeartRate::BleHeartRate() {
+BleHeartRate::BleHeartRate(Statistics& _stats): stats(_stats), simulation(false) {
 	// empty ctor
 }
 
@@ -147,6 +147,9 @@ void BleHeartRate::loop() {
 		Serial.println("BLE: Restart scan");
 		pBLEScan->start(scanTime, scanCompleteCB); // Non-Blocking
 		scanning = true;
+	}
+	if (simulation) {
+		hr = 50 + (millis()/1000) % 150;
 	}
 }
 

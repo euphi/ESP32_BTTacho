@@ -16,6 +16,9 @@
 
 
 #include "SPI.h"
+#include <Singletons.h>
+#include <TimeLib.h>
+
 
 void SDLogger::listDir(const char * dirname, uint8_t levels){
   Serial.printf("Listing directory: %s\n", dirname);
@@ -29,6 +32,7 @@ void SDLogger::listDir(const char * dirname, uint8_t levels){
     Serial.println("Not a directory");
     return;
   }
+
 
   File file = root.openNextFile();
   while(file){
@@ -61,7 +65,12 @@ void SDLogger::listDir(const char * dirname, uint8_t levels){
 
 void SDLogger::appendLog(float speed, float temp, float gradient, uint32_t distance, float height, uint8_t hr) {
 	LogData b;
-	b.timestamp = millis();
+	char buffer[16];
+	time_t t = now();
+	snprintf(buffer, sizeof(buffer)-1, "%04d%02d%02d%02d%02d%02d", year(t), month(t), day(t), hour(t), minute(t), second(t));
+	Serial.println(buffer);
+
+	b.timestamp = t;
 	b.speed = speed;
 	b.temp = temp;
 	b.grad = gradient;
@@ -127,5 +136,4 @@ bool SDLogger::createDir(const char *dirname) {
 	bool rc = SD.mkdir(dirname);
 	if (!rc) Serial.printf("Failed to create dir %s.\n", dirname);
 	return rc;
-
 }

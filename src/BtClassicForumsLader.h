@@ -8,20 +8,24 @@
 #pragma once
 #include <Arduino.h>
 #include <BluetoothSerial.h>
+#include <Statistics.h>
 
 //#include <pixeltypes.h>
 #include <FastLED.h>
 
 class BtClassicForumsLader {
 public:
-	BtClassicForumsLader();
+	BtClassicForumsLader(Statistics& _stats);
 	void loop();
 	void connect();
 
+	enum CONN_STATE {STATE_INIT, STATE_CONNECTING, STATE_CONNECTED, STATE_DISCONNECTED} ;
 	CRGB getStateLED();
+	CONN_STATE isConnected() const {return cstate;}
 
 	static constexpr float dist_per_pulse = 2.155 / 14; // Umfang / Polpaare
-	static constexpr float hmh_per_pulse = 2.155 / 14 * 3600 * 0.001 * 10; // Umfang / Polpaare * 3600 sec/hour * 0.001 m/km * 10 (100m/km)
+	static constexpr float hmh_per_pulse = 2.155 / 14 * 3600 * 0.001 * 10; // Umfang / Polpaare * 3600 sec/hour * 0.001 m/km * 10 (100m/km) --> [0,1 km/h]
+	static constexpr float m_per_pulse = 2.155 / 14 / 1000; // Umfang / Polpaare / 1000mm/m --> [m]
 
 	enum {
 		FLAG_BALANCE1       =  23 , // (1 << 7) << 16,
@@ -55,8 +59,8 @@ public:
 private:
 
 	BluetoothSerial SerialBT;
+	Statistics& stats;
 
-	enum CONN_STATE {STATE_INIT, STATE_CONNECTING, STATE_CONNECTED, STATE_DISCONNECTED} ;
 	CONN_STATE cstate = STATE_INIT;
 	unsigned long lastUpdate = 0;
 
@@ -92,6 +96,8 @@ private:
 
 	static uint8_t address[6];
 
+	bool simulation;
+
 
 public:
 	float getVoltageTotal() const { return ( (batterie[0]+ batterie[1] + batterie[2]) / 1000.0);}
@@ -100,16 +106,15 @@ public:
 	float getHeight() const { return (height / 10.0);}
 
 	//Batterie
-	float getDynCurrent() const { return ((batt_current + cons_current)/ 1000.0) ; }
+	float getDynCurrent() const;
 	float getDynPower() const { return (getDynCurrent() * getVoltageTotal()); }
 	float getBatCurrent() const { return (batt_current / 1000.0 ); }
 	float getConsCurrent() const { return ( cons_current / 1000.0); }
 
 
+	uint8_t getBattPerc() const {return batt_perc;}
 	int8_t getStage() const {return stufe;}
 
-	int16_t getBattCurrent() const {
-		return batt_current;
-	}
+	int16_t getBattCurrent() const {return batt_current;}
 };
 
