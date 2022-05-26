@@ -16,6 +16,7 @@ const BLEUUID BleHeartRate::serviceUUID = BLEUUID((uint16_t)0x180D);
 // The HRM characteristic of the remote service we are interested in.
 const BLEUUID BleHeartRate::charUUID = BLEUUID((uint16_t)0x2A37);
 
+const BLEUUID BleHeartRate::cadenceServiceUUID = BLEUUID((uint16_t)0x1816);
 
 // --------------------------------------------------------------------------------------------------------------------
 // FIXME: Should be part of class
@@ -36,18 +37,27 @@ BleHeartRate::BleHeartRate(Statistics& _stats): stats(_stats), simulation(false)
 void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 	Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
 	// We have found a device, let us now see if it contains the service we are looking for.
-	if (advertisedDevice.haveServiceUUID()  && advertisedDevice.getServiceUUID().equals(serviceUUID)) {
-		Serial.print(F("Found our device!  address: "));
-		advertisedDevice.getScan()->stop();
+	if (advertisedDevice.haveServiceUUID()) {
+		if (advertisedDevice.getServiceUUID().equals(serviceUUID)) {
+			Serial.print(F("Found our device!  address: "));
+			advertisedDevice.getScan()->stop();
 
-		//Also stop pBLEScan--- // TODO: Check if correct. Stopped twice?
-		pBLEScan->stop();
-		pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
-		scanning = false;
+			//Also stop pBLEScan--- // TODO: Check if correct. Stopped twice?
+			pBLEScan->stop();
+			pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
+			scanning = false;
 
-		pServerAddress = new BLEAddress(advertisedDevice.getAddress());
-		doConnect = true;
-	} // Found our server
+			pServerAddress = new BLEAddress(advertisedDevice.getAddress());
+			doConnect = true;
+		} else if (advertisedDevice.getServiceUUID().equals(cadenceServiceUUID)) {
+			Serial.print(F("Found Cadence device!  address: "));
+			pCadenceAddress = new BLEAddress(advertisedDevice.getAddress());
+			doConnectCadence = true;
+		;
+		} else {
+			Serial.printf("Unknown Service %s.\n", advertisedDevice.getServiceUUID().toString().c_str());
+		}
+	}
 }
 
 
@@ -56,7 +66,8 @@ void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 // BLE notifyCallback
 //--------------------------------------------------------------------------------------------
 void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify) {
-  lastUpdate = millis();
+  Serial.printf("BLE Callback with Characteristic %s.\n", pBLERemoteCharacteristic->readValue().c_str());
+	lastUpdate = millis();
   if (bitRead(pData[0], 0) == 1) {
     Serial.println(F("16bit HeartRate Detected"));
   } else {
@@ -150,6 +161,15 @@ void BleHeartRate::loop() {
 	}
 	if (simulation) {
 		hr = 50 + (millis()/1000) % 150;
+	}
+	if (doConnectCadence) {
+		if (connectToServer(*pCadenceAddress)) {
+		      Serial.println(F("We are now connected to the BLE Cadence"));
+		      cadenceConnected = true;
+		} else {
+		      Serial.println(F("Failed to connect to the Cadence."));
+		}
+		doConnectCadence = false;
 	}
 }
 

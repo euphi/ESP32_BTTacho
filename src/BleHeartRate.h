@@ -51,6 +51,8 @@ public:
 	// The HRM characteristic of the remote service we are interested in.
 	static const BLEUUID charUUID;
 
+	static const BLEUUID cadenceServiceUUID;
+
 
 private:
 	Statistics& stats;
@@ -63,11 +65,15 @@ private:
 
 
 	BLEAddress *pServerAddress;
+	BLEAddress *pCadenceAddress;
 	BLEClient  *pClient;
 	bool doConnect = false;
 	bool connected = false;
 	bool notification = false;
 	BLERemoteCharacteristic* pRemoteCharacteristic;
 	bool simulation;
+
+	bool doConnectCadence = false;
+	bool cadenceConnected = false;
 
 };
