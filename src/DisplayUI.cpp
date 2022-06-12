@@ -75,7 +75,9 @@ void DisplayUI::setup() {
 
 	  display.clear();
 	  display.setFont(ArialMT_Plain_10);
-	  display.drawString(0, 0, "Startup. Connecting...");
+	  display.drawString(0, 0, "Startup - Connecting...");
+	  display.setFont(ArialMT_Plain_16);
+	  display.drawString(0, 20, "V0.5.5");
 	  display.display();
 
 	  //TOuch
@@ -90,37 +92,52 @@ void DisplayUI::setup() {
 void DisplayUI::cycle() {
 	pageBoundary(page, 0, COUNT_PAGE-1);
 	anicounter++;
+	uint16_t seccounter = anicounter / 10;
 	display.clear();
 	displayIcons();
 	switch (page) {
 		case PAGE_SPEED:
 			pageBoundary(frame, 0, 2);
 
-			display.drawVerticalLine(48, 16, 20);
+			//display.drawVerticalLine(48, 16, 20);
 			switch (frame) {
 			case 0:
 				displayDistance(112, 16, SIZE_24, Statistics::ESP_START);
+				displayGradient(24,42, SIZE_16);
 				break;
 			case 1:
 				displayHR(106, 16, SIZE_24);
-				displayGradient(24,16, SIZE_16);
+				displayGradient(24,42, SIZE_16);
+				break;
+			case 2:
+				displayHR(106, 16, SIZE_24);
+				displayAvgMaxSpeed(0,12, SIZE_16, Statistics::ESP_START, true);
+				displayAvgMaxSpeed(0,36, SIZE_16, Statistics::ESP_START);
+				break;
+			}
+			displaySpeed(112, 30, SIZE_36);
+			break;
+		case PAGE_TOTALS:
+			frame = seccounter % 4;
+			pageBoundary(frame, 0, 3);
+			displaySpeed(112, 30, SIZE_36);
+			displayHR(106, 16, SIZE_24);
+			switch (frame) {
+			case 0:
+				break;
+			case 1:
 				break;
 			case 2:
 				break;
+			case 3:
+				break;
 			}
-
-			displaySpeed(112, 30, SIZE_36);
-			displayAvgMaxSpeed(0,12, SIZE_16, Statistics::ESP_START, true);
-			displayAvgMaxSpeed(0,36, SIZE_16, Statistics::ESP_START);
-
-			break;
-		case PAGE_TOTALS:
-			pageBoundary(frame, 0, 2);
 			break;
 		case PAGE_BATT:
 			pageBoundary(frame, 0, 2);
-			displayBatterie(0,0,ArialMT_Plain_10);
-
+			displayBatterie(0,16, ArialMT_Plain_16);
+//			displayLevel();
+//			displayConsumerCurrent();
 			break;
 		case PAGE_DETAIL:
 			pageBoundary(frame, 0, 4);
@@ -208,8 +225,8 @@ void DisplayUI::displaySpeed(const uint8_t x, const uint8_t y, const uint8_t siz
 		//font = Roboto_Mono_24;
 		break;
 	case SIZE_36:
-		//font = Orbitron_Medium_36;
-		font = DSEG7_Classic_Bold_36;
+		font = Orbitron_Medium_36;
+		//font = DSEG7_Classic_Bold_36;
 
 //		font = Roboto_Mono_36;
 		break;
@@ -256,14 +273,17 @@ void DisplayUI::displayHR(const uint8_t x, const uint8_t y, const uint8_t size) 
 }
 
 void DisplayUI::displayBatterie(const uint8_t x, const uint8_t y, const uint8_t* font) {
-	display.setFont(ArialMT_Plain_10);
+  display.setFont(font);
 	display.setTextAlignment(TEXT_ALIGN_LEFT);
 	display.drawString(0, 16, String(fl.getVoltageTotal(), 1) + "V");
 	display.drawString(48, 16, String(fl.getBattPerc())+"%");
 	display.drawString(0, 28, String("Batt: ") + String(fl.getBatCurrent(), 2)+"A");
 	display.drawString(0, 40, String("Cons: ") + String(fl.getConsCurrent(), 2)+"A");
 	display.drawString(0, 52, String("Dyn: ") + String(fl.getDynCurrent(), 2)+"A");
+	// Batterie - TODO: Extract method
 
+	//display.drawString(x+64, y+48, "Pow:" + String(fl.getDynPower(), 1) + "W");
+	//display.drawString(x, y+16, "SoC:" + String(fl.getBattPerc()) + "%");
 }
 
 void DisplayUI::displayLevel(const uint8_t x, const uint8_t y, const uint8_t* font) {

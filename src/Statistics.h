@@ -41,7 +41,7 @@ public:
 
 	EDrivingState drivingState;
 
-	void updateDistance(uint32_t _distance) {distance = _distance;}
+	void updateDistance(uint32_t _distance);
 	void updateFLStoredDistance(ESummaryType type, uint32_t distance);
 	void updateSpeed(float speed) { curSpeed = speed;}
 

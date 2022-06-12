@@ -49,6 +49,7 @@ void Statistics::AddHR(uint8_t hr) {
 	}
 }
 
+
 uint8_t Statistics::getAvgHR(ESummaryType type) const {
 	return hr_avg_total[type] / hr_avg_count[type];
 }
@@ -60,6 +61,7 @@ uint8_t Statistics::getMinHR(ESummaryType type) const {
 uint8_t Statistics::getMaxHR(ESummaryType type) const {
 	return hr_max[type];
 }
+
 
 void Statistics::AddCadence(uint8_t cadence) {
 	uint8_t histBucket = 0;
@@ -76,6 +78,9 @@ void Statistics::AddCadence(uint8_t cadence) {
 		cadence_avg_count[i]++;
 	}
 
+void Statistics::updateDistance(uint32_t _distance) {
+	distance = _distance;
+	if (start_distance[ESP_START] == 0) start_distance[ESP_START] = _distance;
 }
 
 void Statistics::cycle() {
