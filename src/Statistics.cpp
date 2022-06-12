@@ -61,32 +61,54 @@ uint8_t Statistics::getMaxHR(ESummaryType type) const {
 	return hr_max[type];
 }
 
+void Statistics::AddCadence(uint8_t cadence) {
+	uint8_t histBucket = 0;
+	for (histBucket = 0; histBucket<sizeof(histBucket); histBucket++) {
+		if (cadence < cadence_histogram_boundary[histBucket]) break;
+	}
+	Serial.printf("Adding cadence of %d to bucket %d\n", cadence, histBucket);
+	cadence_histogram_bucket[histBucket] += 1;
+
+	for (uint8_t i = ESP_TRIP; i <= ESP_START; i++) {
+		if (cadence > cadence_max[i]) cadence_max[i] = cadence;
+		// This calculates the average of all received cadences. It is a valid time-avarge only if HR rate is sent frequently and continuously.
+		cadence_avg_total[i] += cadence;
+		cadence_avg_count[i]++;
+	}
+
+}
+
 void Statistics::cycle() {
+	uint32_t timestamp_thisCycle = millis();
 	if (isnan(curSpeed)) {
 		drivingState = NO_CONN;
 		return;			// NaN as speed means not connected.
 	}
 	if (curSpeed < 0.1) {
 		if (drivingState > STOP) {
-			timestamp_standstill = millis();
+			timestamp_state = timestamp_thisCycle;
 			drivingState = STOP;
 		}
-		if (drivingState == STOP && (millis() > (timestamp_standstill + 120000))) {
+		if (drivingState == STOP && (timestamp_thisCycle > (timestamp_state + 120000))) {
+			timestamp_state = timestamp_thisCycle;
 			drivingState = BREAK;
 		}
 	} else {
 		if (drivingState <= STOP) {
+			timestamp_state = timestamp_thisCycle;
 			drivingState = DRIVE_POWER;
 			//TODO: Cadence sensor needed to distinguish between POWER and COASTING
 		}
 	}
-	uint32_t time_diff = millis() - timestamp_cycle;
+	uint32_t time_diff = timestamp_thisCycle - timestamp_cycle;
 
 	for (uint8_t i = ESP_TRIP; i <= ESP_START; i++) {
 		time_total[i] += time_diff;
 		if (drivingState > STOP) time_driving[i] += time_diff;
+		if (drivingState == BREAK) time_pause[i] += time_diff;
 		if (curSpeed > max_speed[i]) max_speed[i] = curSpeed;
 	}
+	timestamp_cycle = timestamp_thisCycle;
 }
 
 const unsigned char* Statistics::getDriveStateIcon() const {
@@ -108,3 +130,9 @@ const unsigned char* Statistics::getDriveStateIcon() const {
 void Statistics::updateFLStoredDistance(ESummaryType type, uint32_t distance) {
 	start_distance[type] = distance;
 }
+
+void Statistics::getStateTime(String& rc) const {
+	uint32_t time_in_state = timestamp_cycle - timestamp_state;
+	rc = String(time_in_state / 60000) + ":" +  String(time_in_state/1000);
+}
+

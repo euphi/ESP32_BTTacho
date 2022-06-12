@@ -114,7 +114,5 @@ public:
 
 	uint8_t getBattPerc() const {return batt_perc;}
 	int8_t getStage() const {return stufe;}
-
-	int16_t getBattCurrent() const {return batt_current;}
 };
 

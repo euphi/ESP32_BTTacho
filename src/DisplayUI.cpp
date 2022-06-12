@@ -119,9 +119,8 @@ void DisplayUI::cycle() {
 			break;
 		case PAGE_BATT:
 			pageBoundary(frame, 0, 2);
-//			displayBatterie();
-//			displayLevel();
-//			displayConsumerCurrent();
+			displayBatterie(0,0,ArialMT_Plain_10);
+
 			break;
 		case PAGE_DETAIL:
 			pageBoundary(frame, 0, 4);
@@ -257,10 +256,14 @@ void DisplayUI::displayHR(const uint8_t x, const uint8_t y, const uint8_t size) 
 }
 
 void DisplayUI::displayBatterie(const uint8_t x, const uint8_t y, const uint8_t* font) {
-	// Batterie - TODO: Extract method
-//	display.setFont(ArialMT_Plain_8);
-//	display.setTextAlignment(TEXT_ALIGN_LEFT);
-//	display.drawString(60, 0, String(fl.getVoltageTotal(), 1) + "V");
+	display.setFont(ArialMT_Plain_10);
+	display.setTextAlignment(TEXT_ALIGN_LEFT);
+	display.drawString(0, 16, String(fl.getVoltageTotal(), 1) + "V");
+	display.drawString(48, 16, String(fl.getBattPerc())+"%");
+	display.drawString(0, 28, String("Batt: ") + String(fl.getBatCurrent(), 2)+"A");
+	display.drawString(0, 40, String("Cons: ") + String(fl.getConsCurrent(), 2)+"A");
+	display.drawString(0, 52, String("Dyn: ") + String(fl.getDynCurrent(), 2)+"A");
+
 }
 
 void DisplayUI::displayLevel(const uint8_t x, const uint8_t y, const uint8_t* font) {
@@ -284,12 +287,12 @@ void DisplayUI::displayGradient(const uint8_t x, const uint8_t y, const uint8_t 
 	display.drawString(x, y, String(fl.getGradient(),1) + "%");
 }
 
-void DisplayUI::displayConsumerCurrent(const uint8_t x, const uint8_t y, const uint8_t* font) {
-	// ConsCurrent - TODO: Extract method
-	display.setFont(ArialMT_Plain_16);
-	display.setTextAlignment(TEXT_ALIGN_LEFT);
-	//display.drawString(64, 16, String(fl.getConsCurrent(), 1) + "mA");
-}
+//void DisplayUI::displayConsumerCurrent(const uint8_t x, const uint8_t y, const uint8_t* font) {
+//	// ConsCurrent - TODO: Extract method
+//	display.setFont(ArialMT_Plain_16);
+//	display.setTextAlignment(TEXT_ALIGN_LEFT);
+//	//display.drawString(64, 16, String(fl.getConsCurrent(), 1) + "mA");
+//}
 
 void DisplayUI::displayDistance(const uint8_t x, const uint8_t y, const uint8_t size, const Statistics::ESummaryType type) {
 	const uint8_t* font=0;
@@ -315,6 +318,10 @@ void DisplayUI::displayDistance(const uint8_t x, const uint8_t y, const uint8_t 
 		display.drawString(x, y + ((size == SIZE_24) ? 6 : 10), "km");
 	}
 
+}
+
+void DisplayUI::displayConsumerCurrent(const uint8_t x, const uint8_t y,
+		const uint8_t *font) {
 }
 
 void DisplayUI::displayAvgMaxSpeed(const uint8_t x, const uint8_t y, const uint8_t size, const Statistics::ESummaryType type, bool max) {
@@ -343,4 +350,8 @@ void DisplayUI::displayAvgMaxSpeed(const uint8_t x, const uint8_t y, const uint8
 	display.setFont(ArialMT_Plain_10);
 	display.drawString(x+1, y, max?"max":"avg");
 	//display.drawString(x+1, y+10, "km/h");
+}
+
+void DisplayUI::displayHistogram(const uint8_t hist[], const uint8_t hist_size,
+		const uint8_t x, const uint8_t y) {
 }
