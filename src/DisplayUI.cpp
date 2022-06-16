@@ -9,6 +9,9 @@
 #include <DisplayUIFonts.h>
 #include <WiFi.h>
 
+#include <version.h>
+
+
 // Icons TODO: Use own class/modules for graphics
 //static const unsigned char icon_heart[] PROGMEM = {
 //    0b00000000, 0b00000000, //
@@ -77,7 +80,7 @@ void DisplayUI::setup() {
 	  display.setFont(ArialMT_Plain_10);
 	  display.drawString(0, 0, "Startup - Connecting...");
 	  display.setFont(ArialMT_Plain_16);
-	  display.drawString(0, 20, "V0.5.8");
+	  display.drawString(0, 20, VERSION_SHORT);
 	  display.display();
 
 	  //TOuch

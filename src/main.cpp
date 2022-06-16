@@ -36,6 +36,8 @@ SDLogger sdl;
 #include <ESPAsyncWebServer.h>
 #include <AsyncElegantOTA.h>
 
+#include <version.h>
+
 const char* ssid = "IA216mobil";
 const char* password = "WeNiHueIOf!";
 
