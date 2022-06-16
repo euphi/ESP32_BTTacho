@@ -55,6 +55,9 @@ public:
 	uint8_t getAvgCadence(ESummaryType type) const;
 	uint8_t getMaxCadence(ESummaryType type) const;
 
+	void setIPStr(const String& _ipStr) {ipStr = _ipStr;}
+	const String& getIPStr() const {return ipStr;}
+
 	void cycle();
 
 
@@ -91,5 +94,7 @@ private:
 
 	uint32_t timestamp_state = 0;	// Timestamp Last State Change
 	uint32_t timestamp_cycle = 0;	// Timestame Last Cycle
+
+	String ipStr = "";
 
 };

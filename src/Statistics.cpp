@@ -51,7 +51,11 @@ void Statistics::AddHR(uint8_t hr) {
 
 
 uint8_t Statistics::getAvgHR(ESummaryType type) const {
-	return hr_avg_total[type] / hr_avg_count[type];
+	if (hr_avg_count[type]) {
+		return hr_avg_total[type] / hr_avg_count[type];
+	} else {
+		return 0;
+	}
 }
 
 uint8_t Statistics::getMinHR(ESummaryType type) const {
@@ -77,6 +81,7 @@ void Statistics::AddCadence(uint8_t cadence) {
 		cadence_avg_total[i] += cadence;
 		cadence_avg_count[i]++;
 	}
+}
 
 void Statistics::updateDistance(uint32_t _distance) {
 	distance = _distance;

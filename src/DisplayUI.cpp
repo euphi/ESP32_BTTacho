@@ -77,7 +77,7 @@ void DisplayUI::setup() {
 	  display.setFont(ArialMT_Plain_10);
 	  display.drawString(0, 0, "Startup - Connecting...");
 	  display.setFont(ArialMT_Plain_16);
-	  display.drawString(0, 20, "V0.5.5");
+	  display.drawString(0, 20, "V0.5.8");
 	  display.display();
 
 	  //TOuch
@@ -141,6 +141,9 @@ void DisplayUI::cycle() {
 			break;
 		case PAGE_DETAIL:
 			pageBoundary(frame, 0, 4);
+			if (!stats.getIPStr().isEmpty()) {
+				display.drawString(0, 16, String("IP: ") + stats.getIPStr());
+			}
 			break;
 	}
 	display.display();
@@ -164,7 +167,7 @@ void DisplayUI::displayIcons() {
    if (state_icon) display.drawXbm(16, 0, 16, 16, state_icon);
    display.setFont(ArialMT_Plain_10);
    display.setTextAlignment(TEXT_ALIGN_LEFT);
-   display.drawString(32, 0, page_title[page] + String(frame));
+   //DbZ display.drawString(32, 0, page_title[page] + String(frame));
 
 
 

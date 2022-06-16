@@ -228,6 +228,7 @@ void loop() {
 				AsyncElegantOTA.begin(&server);    // Start ElegantOTA
 				server.begin();
 				Serial.printf("Connected to WiFi - HTTP server started at %s.\n", WiFi.localIP().toString().c_str());
+				stats.setIPStr(WiFi.localIP().toString());
 				//init and get the time
 				configTime(3600, 3600, "pool.ntp.org");
 				  struct tm timeinfo;
