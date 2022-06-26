@@ -36,8 +36,10 @@ SDLogger sdl;
 #include <ESPAsyncWebServer.h>
 #include <AsyncElegantOTA.h>
 
-const char* ssid = "IA216oT";
-const char* password = "SwieSecurity";
+#include <version.h>
+
+const char* ssid = "IA216mobil";
+const char* password = "WeNiHueIOf!";
 
 
 AsyncWebServer server(80);
@@ -60,18 +62,18 @@ Atm_led pushled;
 const struct {
 	uint8_t max;
 	CRGB leds[5];
-} hr_leds[] = { { 70, {CRGB::Turquoise, CRGB::Black,     CRGB::Black,   CRGB::Black,   CRGB::Black  }},
-		        { 80, {CRGB::Turquoise, CRGB::Turquoise, CRGB::Black,   CRGB::Black,   CRGB::Black  }},
-				{ 80, {CRGB::Turquoise, CRGB::Turquoise, CRGB::Black,   CRGB::Black,   CRGB::Black  }},
-				{ 90, {CRGB::Green, CRGB::Green, CRGB::Black,   CRGB::Black,   CRGB::Black  }},
-				{ 100, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Black,   CRGB::Black  }},
-				{ 110, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::GreenYellow,   CRGB::Black  }},
-				{ 120, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::Black  }},
-				{ 130, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::Black  }},
-				{ 150, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::GreenYellow  }},
-				{ 160, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Yellow,   CRGB::Yellow  }},
-				{ 170, {CRGB::Green, CRGB::Green, CRGB::GreenYellow,   CRGB::Orange,   CRGB::Orange  }},
-				{255, {CRGB::GreenYellow, CRGB::GreenYellow, CRGB::Orange,  CRGB::Orange,  CRGB::Red    }}
+} hr_leds[] = { { 70,  {CRGB::Turquoise,CRGB::Black,    CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+		        { 80,  {CRGB::Turquoise,CRGB::Turquoise,CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+				{ 90,  {CRGB::Turquoise,CRGB::Green,	CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+				{ 100, {CRGB::Green,	CRGB::Green,	CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+				{ 110, {CRGB::Green,	CRGB::Green,	CRGB::Green,		CRGB::Black,		CRGB::Black  }},
+				{ 120, {CRGB::Green,	CRGB::Green,	CRGB::Green,		CRGB::Green,		CRGB::Black  }},
+				{ 130, {CRGB::Green,	CRGB::Green,	CRGB::GreenYellow,	CRGB::GreenYellow,	CRGB::Black  }},
+				{ 140, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::GreenYellow,	CRGB::Black  }},
+				{ 150, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::GreenYellow,	CRGB::GreenYellow  }},
+				{ 160, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::Yellow,		CRGB::Yellow  }},
+				{ 170, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::Orange,		CRGB::Orange  }},
+				{ 255, {CRGB::Yellow,CRGB::Yellow, CRGB::Orange,		CRGB::Orange,		CRGB::Red    }}
 };
 
 
@@ -99,6 +101,8 @@ void setup()
   WiFi.mode(WIFI_MODE_STA);
   WiFi.begin(ssid, password);
   Serial.println("Connecting to WiFi");
+  Serial.print("LED Array size: ");
+  Serial.println(sizeof(hr_leds) / sizeof(hr_leds[0]));
 
 
   //rtc.set(0, 07, 12, 6, 9, 4, 22);
@@ -109,8 +113,8 @@ void setup()
   FastLED.setBrightness(64);
   FastLED.setCorrection(TypicalSMD5050);
 
-  fill_gradient_RGB(powerledsteps, 0, CRGB::Blue, 7, CRGB::Green);
-  fill_gradient_RGB(battledsteps, 0, CRGB::Red, 3, CRGB::Yellow);
+  fill_gradient_RGB(powerledsteps, 0, CRGB::BlueViolet, 7, CRGB::Green);
+  fill_gradient_RGB(battledsteps, 0, CRGB::Red, 3, CRGB::Orange);
   fill_gradient_RGB(battledsteps, 4, CRGB::YellowGreen, 7, CRGB::Green);
   for (uint_fast8_t i=0; i<8; i++) leds[i] = powerledsteps[i];
   FastLED.show();
@@ -171,7 +175,7 @@ void loop() {
 		leds[0] = powerledsteps[powerStep];
 
 		float cur = forumslader.getBatCurrent();
-		int8_t batStep = floor((cur + 1.0) * 8 / 2.0); // 8 LEDs-Steps, -1A - +1A (2A Diff)
+		int8_t batStep = floor((cur + 0.8) * 8 / 1.6); // 8 LEDs-Steps, -0.8A - +0.8A (1.6A Diff)
 		if (batStep < 0) batStep = 0;
 		if (batStep > 7) batStep = 7;
 		leds[1] = battledsteps[batStep];
@@ -181,7 +185,7 @@ void loop() {
 
 		//Heart rate
 		uint8_t hr = BLEhrm.getHR();
-		for (uint_fast8_t i = 0; i < sizeof(hr_leds[0].leds); i++) {
+		for (uint_fast8_t i = 0; i < 12; i++) {//TODO: Use sizeof for array size (sizeof(hr_leds) / sizeof(hr_leds[0]) ?
 			if (hr < hr_leds[i].max) {
 				for (uint_fast8_t l = 0; l < 5 ; l++) {
 							leds[7-l] = hr_leds[i].leds[l];
@@ -226,6 +230,7 @@ void loop() {
 				AsyncElegantOTA.begin(&server);    // Start ElegantOTA
 				server.begin();
 				Serial.printf("Connected to WiFi - HTTP server started at %s.\n", WiFi.localIP().toString().c_str());
+				stats.setIPStr(WiFi.localIP().toString());
 				//init and get the time
 				configTime(3600, 3600, "pool.ntp.org");
 				  struct tm timeinfo;

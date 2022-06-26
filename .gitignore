@@ -1,6 +1,9 @@
 .pio
 .~*
 
+#Eclipse
+.pydevproject
+
 # FreeCAD backup
 *.FCStd?
 
@@ -11,3 +14,7 @@
 # Example files
 Tools/*.BIN 
 Tools/output.csv
+
+#Versioning
+versioning
+include/version.h

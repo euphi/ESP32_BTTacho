@@ -33,6 +33,8 @@ private:
 	void displayDistance(const uint8_t x, const uint8_t y, const uint8_t size, const Statistics::ESummaryType type);
 	void displayAvgMaxSpeed(const uint8_t x, const uint8_t y, const uint8_t size, const Statistics::ESummaryType type, bool max=false);
 
+	void displayHistogram(const uint8_t hist[], const uint8_t hist_size, const uint8_t x, const uint8_t y);
+
 	void inline pageBoundary(int8_t &p, uint8_t min, uint8_t max) {
 		if (p < 0) p = max;
 		if (p > max) p = 0;
