@@ -197,7 +197,8 @@ void loop() {
 		// State LED
 		leds[2] = forumslader.getStateLED();  // FL
 		if (hr == 0) leds[7] = CRGB::Orange;  // HR
-		if (!BLEhrm.isConnected()) leds[7] = CRGB::Red;
+		if (!BLEhrm.isConnectedHRM()) leds[7] = CRGB::Red;
+		//if (!BLEhrm.isConnectedCadence()) leds[7] = CRGB::Red;
 
 		FastLED.show();
 		if (ani_counter % 50 == 0) {

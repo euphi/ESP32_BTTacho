@@ -12,11 +12,16 @@
 
 // Init static members
 // HRM service
-const BLEUUID BleHeartRate::serviceUUID = BLEUUID((uint16_t)0x180D);
+const BLEUUID BleHeartRate::serviceUUIDhrm = BLEUUID((uint16_t)0x180D);
 // The HRM characteristic of the remote service we are interested in.
-const BLEUUID BleHeartRate::charUUID = BLEUUID((uint16_t)0x2A37);
+const BLEUUID BleHeartRate::charUUIDhrm = BLEUUID((uint16_t)0x2A37);
 
-const BLEUUID BleHeartRate::cadenceServiceUUID = BLEUUID((uint16_t)0x1816);
+const BLEUUID BleHeartRate::serviceUUIDcadence = BLEUUID((uint16_t)0x1816);
+const BLEUUID BleHeartRate::charUUIDcadence = BLEUUID((uint16_t)0x2A5B);
+
+
+const BLEUUID BleHeartRate::serviceUUIbatterie = BLEUUID((uint16_t)0x180F);
+const BLEUUID BleHeartRate::charUUIDbatterie =  BLEUUID((uint16_t)0x2902);
 
 // --------------------------------------------------------------------------------------------------------------------
 // FIXME: Should be part of class
@@ -29,6 +34,29 @@ void scanCompleteCB(BLEScanResults result) {
 // --------------------------------------------------------------------------------------------------------------------
 
 
+/**
+ * Basic Flow
+ * 						State variables:     | rel. Objects      | scanning | doConnect    |
+ * 																			 doConnectCadence
+ *                                           |                   |          |              |
+ * ctor:                                     |                   |          |              |
+ *      0.                                   |                   |    f     |  f           |
+ * setup():                                  |                   |          |              |
+ * 		1. Start background scan for devices | pBLEScan          |  f -> t  |              |
+ *                                           |                   |          |              |
+ * onResult()                                | advertisedDevice  |          |              |
+ *      2. Stop scannning (FIXME!)           |                   | t -> f   |              |   FIXME: Wait for all searched devices or timeout.
+ *      3. Create server adress (cad or hrm) | pCadenceAddress
+ *            (no start of connection yet)     pServerAddress    |          | f -> t       |
+ *                                           |                   |          |              |
+ * loop():                                   |                   |          |              |
+ *      4a) connect to HR                    |                   |          |              |
+ *      4b) connect to HR                    |                   |          |              |
+ *                                           |                   |          |              |
+ *                                           |                   |          |              |
+ *                                           |                   |          |              |
+ */
+
 BleHeartRate::BleHeartRate(Statistics& _stats): stats(_stats), simulation(false) {
 	// empty ctor
 }
@@ -38,26 +66,28 @@ void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 	Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
 	// We have found a device, let us now see if it contains the service we are looking for.
 	if (advertisedDevice.haveServiceUUID()) {
-		if (advertisedDevice.getServiceUUID().equals(serviceUUID)) {
-			Serial.print(F("Found our device!  address: "));
-			advertisedDevice.getScan()->stop();
-
-			//Also stop pBLEScan--- // TODO: Check if correct. Stopped twice?
-			pBLEScan->stop();
-			pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
-			scanning = false;
-
-			pServerAddress = new BLEAddress(advertisedDevice.getAddress());
-			doConnect = true;
-		} else if (advertisedDevice.getServiceUUID().equals(cadenceServiceUUID)) {
-			Serial.print(F("Found Cadence device!  address: "));
-			pCadenceAddress = new BLEAddress(advertisedDevice.getAddress());
-			doConnectCadence = true;
-		;
+		if (advertisedDevice.getServiceUUID().equals(serviceUUIDcadence)) {
+			Serial.print(F("Found cadence device!  address: "));
+			cadence.addr = new BLEAddress(advertisedDevice.getAddress()); //FIXME: find correct BLEDev
+			cadence.state = KNOWN_NOTCONN;
+		} else if (advertisedDevice.getServiceUUID().equals(serviceUUIDhrm)) {
+			Serial.print(F("Found hrm device!  address: "));
+			hrm.addr = new BLEAddress(advertisedDevice.getAddress());
+			hrm.state = KNOWN_NOTCONN;
 		} else {
 			Serial.printf("Unknown Service %s.\n", advertisedDevice.getServiceUUID().toString().c_str());
 		}
 	}
+//	bool stopScan = false; // FIXME
+//	if (stopScan) {
+//		advertisedDevice.getScan()->stop();
+//
+//		//Also stop pBLEScan--- // TODO: Check if correct. Stopped twice?
+//		pBLEScan->stop();
+//		pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
+//		scanning = false;
+//
+//	}
 }
 
 
@@ -122,6 +152,22 @@ void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteri
 
 }
 
+
+void BleHeartRate::careForBLEDev(BLEDev & dev, const BLEUUID& serviceUUID, const BLEUUID& charUUID) {
+	if (dev.state == KNOWN_NOTCONN) {
+		dev.state = CONNECTING;
+		if (connectToServer(dev, serviceUUID, charUUID)) {  // BLOCKING!
+	      Serial.println(F("We are now connected to the BLE HRM"));
+	      dev.state = CONNECTED;
+	    } else {
+	      dev.state = LOST;
+	      Serial.println(F("We have failed to connect to the BLE Device; there is nothing more we will do."));
+	    }
+
+	}
+}
+
+
 void BleHeartRate::setup() {
   BLEDevice::init("ESP32_BTTacho BLE");
   pBLEScan = BLEDevice::getScan(); //create new scan
@@ -137,69 +183,77 @@ void BleHeartRate::loop() {
 	if (lastUpdate + 10000 < millis()) {	// Timeout
 		hr = 0;
 	}
-	if (doConnect) {
-	    if (connectToServer(*pServerAddress)) {
-	      Serial.println(F("We are now connected to the BLE HRM"));
-	      connected = true;
-	    } else {
-	      Serial.println(F("We have failed to connect to the HRM; there is nothing more we will do."));
-	    }
-	    doConnect = false;
-	} else if (connected) {
-		if (!pClient->isConnected()) {
-			Serial.println("No longer connected - restart scanning");
-			connected = false;
-			hr = 0;
-		}
-		yield();
-	} else if (!scanning) {
-		pBLEScan->stop();
-		pBLEScan->clearResults();
-		Serial.println("BLE: Restart scan");
-		pBLEScan->start(scanTime, scanCompleteCB); // Non-Blocking
-		scanning = true;
+	if (!scanning) {
+		careForBLEDev(hrm, serviceUUIDhrm, charUUIDhrm);
+		careForBLEDev(cadence, serviceUUIDcadence, charUUIDcadence);
 	}
+
+//	if (doConnect) {
+//	    if (connectToServer(*pServerAddress)) {
+//	      Serial.println(F("We are now connected to the BLE HRM"));
+//	      connected = true;
+//	    } else {
+//	      Serial.println(F("We have failed to connect to the HRM; there is nothing more we will do."));
+//	    }
+//	    doConnect = false;
+//	} else if (connected ....
+
+
+
+//	if (connected) {
+//		if (!pClient->isConnected()) {
+//			Serial.println("No longer connected - restart scanning");
+//			connected = false;
+//			hr = 0;
+//		}
+//		yield();
+//	} else if (!scanning) {
+//		pBLEScan->stop();
+//		pBLEScan->clearResults();
+//		Serial.println("BLE: Restart scan");
+//		pBLEScan->start(scanTime, scanCompleteCB); // Non-Blocking
+//		scanning = true;
+//	}
 	if (simulation) {
 		hr = 50 + (millis()/1000) % 150;
 	}
-	if (doConnectCadence) {
-		if (connectToServer(*pCadenceAddress)) {
-		      Serial.println(F("We are now connected to the BLE Cadence"));
-		      cadenceConnected = true;
-		} else {
-		      Serial.println(F("Failed to connect to the Cadence."));
-		}
-		doConnectCadence = false;
-	}
+//	if (doConnectCadence) {
+//		if (connectToServer(*pCadenceAddress)) {
+//		      Serial.println(F("We are now connected to the BLE Cadence"));
+//		      cadenceConnected = true;
+//		} else {
+//		      Serial.println(F("Failed to connect to the Cadence."));
+//		}
+//		doConnectCadence = false;
+//	}
 }
 
 
 //--------------------------------------------------------------------------------------------
 //  Connect to BLE HRM
 //--------------------------------------------------------------------------------------------
-bool BleHeartRate::connectToServer(BLEAddress pAddress) {
+bool BleHeartRate::connectToServer(BLEDev& device, const BLEUUID& serviceUUID, const BLEUUID& charUUID) {
     Serial.print(F("Forming a connection to "));
-    Serial.println(pAddress.toString().c_str());
+    Serial.println(device.addr->toString().c_str());
 
-    if (!pClient) {
-    	pClient  = BLEDevice::createClient();
+    if (!device.client) {
+    	device.client  = BLEDevice::createClient();
     	Serial.println(F(" - Created client"));
     } else {
     	Serial.println(F(" - reusing existing client"));
     }
 
     // Connect to the HRM BLE Server.
-    pClient->connect(pAddress);
+    device.client ->connect(*device.addr);
     Serial.println(F(" - Connected to server"));
 
     // Obtain a reference to the service we are after in the remote BLE server.
-    BLERemoteService* pRemoteService = pClient->getService(serviceUUID);
+    BLERemoteService* pRemoteService = device.client->getService(serviceUUID);
     if (pRemoteService == nullptr) {
       Serial.print(F("Failed to find our service UUID: "));
       //Serial.println(serviceUUID.toString().c_str());
       return false;
     }
-    Serial.println(F(" - Found our service"));
 
     // Obtain a reference to the characteristic in the service of the remote BLE server.
     pRemoteCharacteristic = pRemoteService->getCharacteristic(charUUID);

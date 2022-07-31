@@ -156,11 +156,12 @@ void DisplayUI::displayIcons() {
    // LEFT ----> RIGHT
    // Connections
    // BLE HR
-   if (blehrm.isConnected()) display.drawXbm(0, 0, 8, 8, icon_heart_filled);
+   if (blehrm.isConnectedHRM()) display.drawXbm(0, 0, 8, 8, icon_heart_filled);
+   if (blehrm.isConnectedCadence()) display.drawXbm(0, 8, 8, 8, icon_heart_filled);
    //BT
    if (fl.isConnected() == BtClassicForumsLader::STATE_CONNECTED ||
 	   (fl.isConnected() == BtClassicForumsLader::STATE_CONNECTING && ((anicounter/5)%2 == 0)) ) {
-	   	   display.drawXbm(0, 8, 8, 8, icon_bt);
+	   	   display.drawXbm(8, 8, 8, 8, icon_bt);
    }
    if (WiFi.isConnected()) {
 	   display.drawXbm(8, 0, 8, 8, icon_wifi);
