@@ -10,7 +10,7 @@
 #include <WiFi.h>
 
 #include <version.h>
-
+#include <pindef.h>
 
 // Icons TODO: Use own class/modules for graphics
 //static const unsigned char icon_heart[] PROGMEM = {
@@ -85,10 +85,10 @@ void DisplayUI::setup() {
 
 	  //TOuch
 	  //touchSetCycles(0x2000, 0x2000);
-	  touch[0].begin(2).onPress([this](int idx, int v, int up){page++;}, 0);
-	  touch[1].begin(1).onPress([this](int idx, int v, int up){page--;}, 0);
-	  touch[2].begin(0).onPress([this](int idx, int v, int up){frame++;}, 0);
-	  touch[3].begin(5).onPress([this](int idx, int v, int up){frame--;}, 0);
+	  touch[0].begin(TOUCH_UP).onPress([this](int idx, int v, int up){page++;}, 0);
+	  touch[1].begin(TOUCH_DN).onPress([this](int idx, int v, int up){page--;}, 0);
+	  touch[2].begin(TOUCH_R).onPress([this](int idx, int v, int up){frame++;}, 0);
+	  touch[3].begin(TOUCH_L).onPress([this](int idx, int v, int up){frame--;}, 0);
 	  AtmESP32TouchButton::setup();
 }
 
@@ -118,7 +118,7 @@ void DisplayUI::cycle() {
 				displayAvgMaxSpeed(0,36, SIZE_16, Statistics::ESP_START);
 				break;
 			}
-			displaySpeed(112, 30, SIZE_36);
+			displaySpeed(112, 34, SIZE_36);
 			break;
 		case PAGE_TOTALS:
 			frame = seccounter % 4;
@@ -144,9 +144,13 @@ void DisplayUI::cycle() {
 			break;
 		case PAGE_DETAIL:
 			pageBoundary(frame, 0, 4);
+			display.setTextAlignment(TEXT_ALIGN_LEFT);
+			display.setFont(ArialMT_Plain_10);
 			if (!stats.getIPStr().isEmpty()) {
 				display.drawString(0, 16, String("IP: ") + stats.getIPStr());
 			}
+			display.drawString(0, 28, VERSION);
+
 			break;
 	}
 	display.display();
@@ -205,9 +209,9 @@ void DisplayUI::displayIcons() {
    uint8_t midx = 61;
    uint8_t midy = 6;
    if (touch[0].state() == Atm_button::PRESSED) display.fillTriangle(midx, midy-1, midx-6, midy-6, midx+6, midy-6);  // TOP
-   if (touch[1].state() == Atm_button::PRESSED) display.fillTriangle(midx-1, midy, midx-6, midy-6, midx-6, midy+6);  // LEFT
+   if (touch[1].state() == Atm_button::PRESSED) display.fillTriangle(midx, midy-1, midx-6, midy+6, midx+6, midy+6);  // BOTT
    if (touch[2].state() == Atm_button::PRESSED) display.fillTriangle(midx+1, midy, midx+6, midy-6, midx+6, midy+6);  // RIGHT
-   if (touch[3].state() == Atm_button::PRESSED) display.fillTriangle(midx, midy-1, midx-6, midy+6, midx+6, midy+6);  // BOTT
+   if (touch[3].state() == Atm_button::PRESSED) display.fillTriangle(midx-1, midy, midx-6, midy-6, midx-6, midy+6);  // LEFT
 }
 
 void DisplayUI::displaySpeed(const uint8_t x, const uint8_t y, const uint8_t size) {
@@ -283,9 +287,8 @@ void DisplayUI::displayBatterie(const uint8_t x, const uint8_t y, const uint8_t*
 	display.setTextAlignment(TEXT_ALIGN_LEFT);
 	display.drawString(0, 16, String(fl.getVoltageTotal(), 1) + "V");
 	display.drawString(48, 16, String(fl.getBattPerc())+"%");
-	display.drawString(0, 28, String("Batt: ") + String(fl.getBatCurrent(), 2)+"A");
-	display.drawString(0, 40, String("Cons: ") + String(fl.getConsCurrent(), 2)+"A");
-	display.drawString(0, 52, String("Dyn: ") + String(fl.getDynCurrent(), 2)+"A");
+	display.drawString(0, 28, String("B: ") + String(fl.getBatCurrent(), 2)+"A " + String("C: ") + String(fl.getConsCurrent(), 2)+"A");
+	display.drawString(0, 52, String("D: ") + String(fl.getDynCurrent(), 2)+"A");
 	// Batterie - TODO: Extract method
 
 	//display.drawString(x+64, y+48, "Pow:" + String(fl.getDynPower(), 1) + "W");
