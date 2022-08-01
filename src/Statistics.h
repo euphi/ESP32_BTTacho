@@ -95,6 +95,6 @@ private:
 	uint32_t timestamp_state = 0;	// Timestamp Last State Change
 	uint32_t timestamp_cycle = 0;	// Timestame Last Cycle
 
-	String ipStr = "";
+	String ipStr = "n/a";
 
 };
