@@ -29,6 +29,9 @@ SDLogger sdl;
 
 #include "mbedtls/md5.h"
 
+#include "freertos/task.h"
+
+
 #include "time.h"
 
 #include <WiFi.h>
@@ -88,6 +91,72 @@ void task_writeLog(void * p) {
 	}
 }
 
+void task_debuglog(void *p) {
+	Serial.println("🏃 - Task DebugLogstarted");
+	while(true) {
+		char pcWriteBuffer[10000];
+		vTaskList(pcWriteBuffer);
+		Serial.println("🔊 ---- Task Info ---");
+		Serial.println(pcWriteBuffer);
+		vTaskDelay(10000 / portTICK_PERIOD_MS);			// Sleep 5sec
+		TaskStatus_t *pxTaskStatusArray;
+		volatile UBaseType_t uxArraySize, x;
+		uint32_t ulTotalRunTime, ulStatsAsPercentage;
+
+		// Make sure the write buffer does not contain a string.
+		*pcWriteBuffer = 0x00;
+
+		// Take a snapshot of the number of tasks in case it changes while this
+		// function is executing.
+		uxArraySize = uxTaskGetNumberOfTasks();
+
+		// Allocate a TaskStatus_t structure for each task.  An array could be
+		// allocated statically at compile time.
+		pxTaskStatusArray = static_cast<TaskStatus_t*> (pvPortMalloc(uxArraySize * sizeof(TaskStatus_t)));
+
+		if (pxTaskStatusArray != NULL) {
+			// Generate raw status information about each task.
+			uxArraySize = uxTaskGetSystemState(pxTaskStatusArray, uxArraySize,
+					&ulTotalRunTime);
+
+			// For percentage calculations.
+			ulTotalRunTime /= 100UL;
+
+			// Avoid divide by zero errors.
+			if (ulTotalRunTime > 0) {
+				// For each populated position in the pxTaskStatusArray array,
+				// format the raw data as human readable ASCII data
+				for (x = 0; x < uxArraySize; x++) {
+					// What percentage of the total run time has the task used?
+					// This will always be rounded down to the nearest integer.
+					// ulTotalRunTimeDiv100 has already been divided by 100.
+					ulStatsAsPercentage = pxTaskStatusArray[x].ulRunTimeCounter
+							/ ulTotalRunTime;
+
+//					if (ulStatsAsPercentage > 0UL) {
+//						sprintf(pcWriteBuffer, "%s\t\t%lu\t\t%lu%%\r\n",
+//								pxTaskStatusArray[x].pcTaskName,
+//								pxTaskStatusArray[x].ulRunTimeCounter,
+//								ulStatsAsPercentage);
+//					} else {
+//						// If the percentage is zero here then the task has
+//						// consumed less than 1% of the total run time.
+//						sprintf(pcWriteBuffer, "%s\t\t%lu\t\t<1%%\r\n",
+//								pxTaskStatusArray[x].pcTaskName,
+//								pxTaskStatusArray[x].ulRunTimeCounter);
+//					}
+//
+//					pcWriteBuffer = pcWriteBuffer + strlen((char*) pcWriteBuffer);
+				}
+			}
+
+			// The array is no longer needed, free the memory it consumes.
+			vPortFree(pxTaskStatusArray);
+		}
+	}
+
+}
+
 void setup()
 {
   Serial.begin(115200);
@@ -134,6 +203,14 @@ void setup()
     1,               // Task priority
     NULL             // Task handle
   );
+
+  xTaskCreate(task_debuglog, "DebugTask",
+    2048,            // Stack size (bytes)
+    NULL,            // Parameter to pass
+    1,               // Task priority
+    NULL             // Task handle
+  );
+
 }
 
 

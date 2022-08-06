@@ -69,14 +69,22 @@ void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 		if (advertisedDevice.getServiceUUID().equals(serviceUUIDcadence)) {
 			Serial.print(F("Found cadence device!  address: "));
 			cadence.addr = new BLEAddress(advertisedDevice.getAddress()); //FIXME: find correct BLEDev
+		    Serial.println(cadence.addr ->toString().c_str());
 			cadence.state = KNOWN_NOTCONN;
 		} else if (advertisedDevice.getServiceUUID().equals(serviceUUIDhrm)) {
 			Serial.print(F("Found hrm device!  address: "));
 			hrm.addr = new BLEAddress(advertisedDevice.getAddress());
+			Serial.println(hrm.addr ->toString().c_str());
 			hrm.state = KNOWN_NOTCONN;
 		} else {
 			Serial.printf("Unknown Service %s.\n", advertisedDevice.getServiceUUID().toString().c_str());
 		}
+	}
+	if (scanning && hrm.addr != 0 && cadence.addr != 0) {
+		scanning = false;
+		Serial.println("Stopped scanning because both devices found!");
+		pBLEScan->stop();
+		pBLEScan->clearResults(); // delete results fromBLEScan buffer to release memory
 	}
 //	bool stopScan = false; // FIXME
 //	if (stopScan) {
