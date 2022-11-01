@@ -9,6 +9,8 @@
 #include <DisplayUIFonts.h>
 #include <WiFi.h>
 
+#include <TimeLib.h>
+
 #include <version.h>
 #include <pindef.h>
 
@@ -75,6 +77,7 @@ DisplayUI::DisplayUI(const BtClassicForumsLader& _fl, const BleHeartRate& _blehr
 void DisplayUI::setup() {
 	  display.init();
 	  display.flipScreenVertically();
+	  display.setBrightness(255);
 
 	  display.clear();
 	  display.setFont(ArialMT_Plain_10);
@@ -98,6 +101,7 @@ void DisplayUI::cycle() {
 	uint16_t seccounter = anicounter / 10;
 	display.clear();
 	displayIcons();
+	char buffer[16];
 	switch (page) {
 		case PAGE_SPEED:
 			pageBoundary(frame, 0, 2);
@@ -150,6 +154,10 @@ void DisplayUI::cycle() {
 				display.drawString(0, 16, String("IP: ") + stats.getIPStr());
 			}
 			display.drawString(0, 28, VERSION);
+			time_t t = now();
+			snprintf(buffer, sizeof(buffer)-1, "%02d:%02d:%02d", hour(t), minute(t), second(t));
+			display.drawString(0,40, buffer);
+
 
 			break;
 	}
@@ -313,7 +321,7 @@ void DisplayUI::displayGradient(const uint8_t x, const uint8_t y, const uint8_t 
 	if (size != SIZE_16) return; //TODO: Add other sizes
 	display.setFont(ArialMT_Plain_16);
 	display.setTextAlignment(TEXT_ALIGN_RIGHT);
-	display.drawString(x, y, String(fl.getGradient(),1) + "%");
+	display.drawString(x, y, String(fl.getGradient(),2) + "%");
 }
 
 //void DisplayUI::displayConsumerCurrent(const uint8_t x, const uint8_t y, const uint8_t* font) {

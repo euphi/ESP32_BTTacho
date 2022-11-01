@@ -22,6 +22,14 @@ public:
 	DisplayUI(const BtClassicForumsLader& _fl, const BleHeartRate& _blehrm, const Statistics& _stats);
 	void setup();
 	void cycle();
+
+	void setDimmed(bool _dimmed) {
+		if (_dimmed != dimmed) {
+			display.setBrightness(_dimmed?30:255);
+			dimmed = _dimmed;
+		}
+	}
+
 private:
 	void displayIcons();
 	void displaySpeed(const uint8_t x, const uint8_t y, const uint8_t size);
@@ -47,6 +55,8 @@ private:
 	AtmESP32TouchButton touch[4];
 	uint32_t anicounter;
 	bool simulation;
+	bool dimmed=false;
+
 
 
 	enum EIconTypes {

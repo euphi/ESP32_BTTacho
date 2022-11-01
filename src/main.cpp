@@ -37,6 +37,7 @@ SDLogger sdl;
 #include <AsyncElegantOTA.h>
 
 #include <version.h>
+#include <pindef.h>
 
 const char* ssid = "IA216mobil";
 const char* password = "WeNiHueIOf!";
@@ -52,6 +53,7 @@ AsyncWebServer server(80);
 #include <Automaton.h>
 Atm_button pushb;
 Atm_led pushled;
+Atm_bit dimmstate;
 
 //#include <esp32_touch.hpp>
 //ESP32Touch touchpins;
@@ -109,8 +111,8 @@ void setup()
 
 
   // Initialise FastLED
-  FastLED.addLeds<NEOPIXEL, 27>(leds, 8);
-  FastLED.setBrightness(64);
+  FastLED.addLeds<NEOPIXEL, LEDSTRIP_0>(leds, 8);
+  FastLED.setBrightness(200);
   FastLED.setCorrection(TypicalSMD5050);
 
   fill_gradient_RGB(powerledsteps, 0, CRGB::BlueViolet, 7, CRGB::Green);
@@ -124,8 +126,13 @@ void setup()
   BLEhrm.setup();
 
 
-  pushb.begin(25).onPress(pushled, Atm_led::EVT_TOGGLE);
-  pushled.begin(32, true);
+  dimmstate.trace(Serial);
+  //pushb.begin(PB_0).onPress(pushled, Atm_led::EVT_TOGGLE);
+  pushb.begin(PB_0).onPress(dimmstate, Atm_bit::EVT_TOGGLE);
+  //dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([this](int idx, int v, int up){Serial.println("DIMM Toggle");}, 0);
+  dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([](int idx, int v, int up){Serial.printf("DIMM Toggle (idx: %d, v: %d, up: %d\n", idx, v, up);display.setDimmed(v);FastLED.setBrightness(v?15:100);}, 0);
+
+  pushled.begin(LED_0, true);
 
   sdl.setup();
   xTaskCreate(task_writeLog, "LogWriter SD",
