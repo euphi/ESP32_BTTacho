@@ -19,3 +19,4 @@ Tools/data_*/
 #Versioning
 versioning
 include/version.h
+/coredump.log

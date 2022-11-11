@@ -30,6 +30,9 @@ public:
 
 	void appendLog(float speed, float temp, float gradient, uint32_t distance, float height, uint8_t hr);
 
+	uint16_t getAllFileLinks(String& rc) const;
+	void     getFileHTML(String& rc, File& root, uint8_t strip_front) const;
+
 private:
 	void listDir(const char *dirname, uint8_t levels);
 	void deleteFile(const char *path);

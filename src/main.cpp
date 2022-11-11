@@ -39,8 +39,12 @@ SDLogger sdl;
 #include <version.h>
 #include <pindef.h>
 
-const char* ssid = "IA216mobil";
-const char* password = "WeNiHueIOf!";
+//const char* ssid = "IA216mobil";
+//const char* password = "WeNiHueIOf!";
+
+const char* ssid = "IA216oT";
+const char* password = "SwieSecurity";
+
 
 
 AsyncWebServer server(80);
@@ -130,11 +134,17 @@ void setup()
   //pushb.begin(PB_0).onPress(pushled, Atm_led::EVT_TOGGLE);
   pushb.begin(PB_0).onPress(dimmstate, Atm_bit::EVT_TOGGLE);
   //dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([this](int idx, int v, int up){Serial.println("DIMM Toggle");}, 0);
-  dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([](int idx, int v, int up){Serial.printf("DIMM Toggle (idx: %d, v: %d, up: %d\n", idx, v, up);display.setDimmed(v);FastLED.setBrightness(v?15:100);}, 0);
+  dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([](int idx, int v, int up){Serial.printf("DIMM Toggle (idx: %d, v: %d, up: %d\n", idx, v, up);display.setDimmed(v);FastLED.setBrightness(v?15:200);}, 0);
 
   pushled.begin(LED_0, true);
 
   sdl.setup();
+
+  String returnstring;
+  sdl.getAllFileLinks(returnstring);
+  Serial.println(returnstring.c_str());
+  Serial.flush();
+
   xTaskCreate(task_writeLog, "LogWriter SD",
     2048,            // Stack size (bytes)
     NULL,            // Parameter to pass
@@ -218,10 +228,6 @@ void loop() {
 		if (!wifiInitialized) {
 			if (WiFi.status() == WL_CONNECTED) {
 				wifiInitialized = true;
-//				server.on("/logfile.bin", HTTP_GET, [](AsyncWebServerRequest *request) {
-//					//request->send(200, "text/plain", "Hi! /Logfile placeholder.");
-//					request->send(SD, "/BTTacho/LOG_0002.BIN", "application/octet-stream", true);
-//				});
 ////				server.on("/logfile.bin", HTTP_GET, [](AsyncWebServerRequest *request) {
 ////							//request->send(200, "text/plain", "Hi! Logfile (no /) placeholder.");
 ////							request->send(SD, "/BTTacho/LOG_0002.BIN", "application/octet-stream", true);
@@ -232,9 +238,20 @@ void loop() {
 //				server.onNotFound([](AsyncWebServerRequest *request){
 //				  request->send(404);
 //				});
-				//server.serveStatic("/log", SD, "/BTTacho/");
-				//server.serveStatic("/", SD, "/");
+				server.serveStatic("/log/", SD, "/BTTacho/");
 				AsyncElegantOTA.begin(&server);    // Start ElegantOTA
+				server.serveStatic("/SD/", SD, "/");
+				server.on("/logfiles/", HTTP_GET, [](AsyncWebServerRequest *request) {
+					Serial.println("📜 REQUEST: logfile.bin [hardcoded]");
+					String returnstring("");
+					sdl.getAllFileLinks(returnstring);
+					request->send(200, "text/html", returnstring.c_str());
+//					request->send(SD, "/BTTacho/LOG_0002.BIN", "application/octet-stream", true);
+				});
+//				server.on("/log/", HTTP_GET, [](AsyncWebServerRequest *request) {
+//					void;
+//				});
+				//}
 				server.begin();
 				Serial.printf("Connected to WiFi - HTTP server started at %s.\n", WiFi.localIP().toString().c_str());
 				stats.setIPStr(WiFi.localIP().toString());

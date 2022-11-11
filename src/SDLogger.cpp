@@ -21,7 +21,7 @@
 
 
 void SDLogger::listDir(const char * dirname, uint8_t levels){
-  Serial.printf("Listing directory: %s\n", dirname);
+  Serial.printf("📁 Listing directory: %s\n", dirname);
 
   File root = SD.open(dirname);
   if(!root){
@@ -59,7 +59,6 @@ void SDLogger::listDir(const char * dirname, uint8_t levels){
     char buffer[24];
     snprintf(buffer, sizeof(buffer), "/BTTacho/LOG_%04u.BIN", max_number);
     filename = buffer;
-    Serial.printf("!!! - New file name %s.\n", filename.c_str()); ;
 }
 
 
@@ -129,8 +128,63 @@ void SDLogger::setup(){
   Serial.printf("Used space: %lluMB\n", SD.usedBytes() / (1024 * 1024));
 
   createDir("/BTTacho");
-  listDir("/BTTacho", 0);
+
+  time_t t = now();
+  if (year(t)>=2000) { // Time is available
+	  char buffer[40];
+	  snprintf(buffer, sizeof(buffer)-1, "/BTTacho/%04d%02d%02d/L_%02d%02d%02d.bin", year(t), month(t), day(t), hour(t), minute(t), second(t));
+	  Serial.println(buffer);
+	  filename = buffer;
+  } else {
+	  listDir("/BTTacho", 0);
+  }
+  Serial.printf("🗎 - New file name: %s\n", filename.c_str()); ;
 }
+
+uint16_t SDLogger::getAllFileLinks(String &rc) const {
+	rc += "<html><body><h1>Logfiles</h1>\n<p>\n";
+	File root = SD.open("/BTTacho");
+
+	  if(!root){
+	    rc += "Failed to open directory";
+	    Serial.println("500 - Can't open file/dir");
+	    return 500;
+	  }
+	  if(!root.isDirectory()){
+	    rc += "Not a directory";
+	    Serial.println("500 - Not a directory");
+	    return 500;
+	  }
+	  getFileHTML(rc, root, 8);  // 8 chars for "/BTTacho"
+
+	rc += "</p></body></html>";
+	return 200;
+}
+
+void SDLogger::getFileHTML(String &rc, File &root, uint8_t strip_front) const {
+    File file = root.openNextFile();  // First file in root-DIR
+
+	while (file) {
+		Serial.println(file.name());
+		Serial.flush();
+		String filehtml;
+		if (file.isDirectory()) {
+			rc += "<h2>";
+			rc += file.name();
+			rc += "</h2>\n";
+			String fh;
+			getFileHTML(fh, file, strip_front);
+			rc += fh;
+			rc += "\n";
+		} else {
+			String uri= (file.path()+ strip_front+1);
+			rc = rc + "<a href=\"/log/"+uri+"\">" + uri + "</a>";
+			rc = rc + " (" + file.size() + ") <br />\n";
+		}
+		file = root.openNextFile();   // next file in root-DIR
+	}
+}
+
 
 bool SDLogger::createDir(const char *dirname) {
 	bool rc = SD.mkdir(dirname);
