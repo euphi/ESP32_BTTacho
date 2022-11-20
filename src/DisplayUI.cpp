@@ -10,6 +10,7 @@
 #include <WiFi.h>
 
 #include <TimeLib.h>
+#include <DateTime.h>
 
 #include <version.h>
 #include <pindef.h>
@@ -101,7 +102,7 @@ void DisplayUI::cycle() {
 	uint16_t seccounter = anicounter / 10;
 	display.clear();
 	displayIcons();
-	char buffer[16];
+	//char buffer[16];
 	switch (page) {
 		case PAGE_SPEED:
 			pageBoundary(frame, 0, 2);
@@ -154,9 +155,12 @@ void DisplayUI::cycle() {
 				display.drawString(0, 16, String("IP: ") + stats.getIPStr());
 			}
 			display.drawString(0, 28, VERSION);
-			time_t t = now();
-			snprintf(buffer, sizeof(buffer)-1, "%02d:%02d:%02d", hour(t), minute(t), second(t));
-			display.drawString(0,40, buffer);
+//			time_t t = now();
+//			snprintf(buffer, sizeof(buffer)-1, "%02d:%02d:%02d", hour(t), minute(t), second(t));
+			time_t time_now = now();
+			//time(&time_now);
+			String time_str = DateFormatter::format(DateFormatter::TIME_ONLY, time_now);
+			display.drawString(0,40, time_str);
 
 
 			break;

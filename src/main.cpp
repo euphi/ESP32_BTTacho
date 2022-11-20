@@ -25,11 +25,11 @@ DisplayUI display(forumslader, BLEhrm, stats);
 
 //SD
 #include <SDLogger.h>
-SDLogger sdl;
 
 #include "mbedtls/md5.h"
 
 #include "time.h"
+#include <DateTime.h>
 
 #include <WiFi.h>
 #include <AsyncTCP.h>
@@ -39,13 +39,11 @@ SDLogger sdl;
 #include <version.h>
 #include <pindef.h>
 
-//const char* ssid = "IA216mobil";
-//const char* password = "WeNiHueIOf!";
+const char* ssid = "IA216mobil";
+const char* password = "WeNiHueIOf!";
 
-const char* ssid = "IA216oT";
-const char* password = "SwieSecurity";
-
-
+//const char* ssid = "IA216oT";
+//const char* password = "SwieSecurity";
 
 AsyncWebServer server(80);
 
@@ -56,7 +54,7 @@ AsyncWebServer server(80);
 
 #include <Automaton.h>
 Atm_button pushb;
-Atm_led pushled;
+//Atm_led pushled;
 Atm_bit dimmstate;
 
 //#include <esp32_touch.hpp>
@@ -68,27 +66,30 @@ Atm_bit dimmstate;
 const struct {
 	uint8_t max;
 	CRGB leds[5];
-} hr_leds[] = { { 70,  {CRGB::Turquoise,CRGB::Black,    CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
-		        { 80,  {CRGB::Turquoise,CRGB::Turquoise,CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
-				{ 90,  {CRGB::Turquoise,CRGB::Green,	CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
-				{ 100, {CRGB::Green,	CRGB::Green,	CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
-				{ 110, {CRGB::Green,	CRGB::Green,	CRGB::Green,		CRGB::Black,		CRGB::Black  }},
-				{ 120, {CRGB::Green,	CRGB::Green,	CRGB::Green,		CRGB::Green,		CRGB::Black  }},
-				{ 130, {CRGB::Green,	CRGB::Green,	CRGB::GreenYellow,	CRGB::GreenYellow,	CRGB::Black  }},
-				{ 140, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::GreenYellow,	CRGB::Black  }},
-				{ 150, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::GreenYellow,	CRGB::GreenYellow  }},
-				{ 160, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::Yellow,		CRGB::Yellow  }},
-				{ 170, {CRGB::Green,	CRGB::GreenYellow,CRGB::GreenYellow,CRGB::Orange,		CRGB::Orange  }},
-				{ 255, {CRGB::Yellow,CRGB::Yellow, CRGB::Orange,		CRGB::Orange,		CRGB::Red    }}
+} hr_leds[] = { { 70,  {CRGB::Turquoise,	CRGB::Black,        CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+		        { 80,  {CRGB::Turquoise,    CRGB::Turquoise,    CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+				{ 90,  {CRGB::Turquoise,    CRGB::Green,	    CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+				{ 100, {CRGB::Green,	    CRGB::Green,	    CRGB::Black,   		CRGB::Black,		CRGB::Black  }},
+				{ 110, {CRGB::Green,	    CRGB::Green,	    CRGB::Green,		CRGB::Black,		CRGB::Black  }},
+				{ 120, {CRGB::Green,	    CRGB::Green,	    CRGB::Green,		CRGB::Green,		CRGB::Black  }},
+				{ 125, {CRGB::Green,	    CRGB::Green,	    CRGB::Green,		CRGB::GreenYellow,	CRGB::Black  }},
+				{ 130, {CRGB::Green,	    CRGB::Green,	    CRGB::GreenYellow,	CRGB::GreenYellow,	CRGB::Black  }},
+				{ 135, {CRGB::Green,	    CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,	CRGB::Black  }},
+				{ 140, {CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,	CRGB::Black  }},
+				{ 145, {CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,	CRGB::GreenYellow}},
+				{ 150, {CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,	CRGB::Yellow }},
+				{ 155, {CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::GreenYellow,  CRGB::Yellow,   	CRGB::Yellow }},
+				{ 160, {CRGB::GreenYellow,  CRGB::Yellow,       CRGB::Yellow,       CRGB::Orange,		CRGB::Orange }},
+				{ 165, {CRGB::Yellow, 	    CRGB::Yellow,       CRGB::Yellow,       CRGB::Orange,		CRGB::Orange }},
+				{ 170, {CRGB::Yellow,       CRGB::Yellow,       CRGB::Orange,       CRGB::Orange,		CRGB::Orange }},
+				{ 255, {CRGB::Yellow,	    CRGB::Orange,		CRGB::Orange,		CRGB::Orange,		CRGB::Red    }}
 };
 
 
 void task_writeLog(void * p) {
-	Serial.println("🏃 - Task LogWriter started");
+	sdl.log(SDLogger::Log_Info, SDLogger::TAG_OP, "🏃 - Task LogWriter started");
 	while(true) {
-		Serial.print("Write Log - Stack: ");
-		Serial.println(uxTaskGetStackHighWaterMark(NULL));  // DEBUG
-
+		sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_OP, "Task writeLog: stack usage %d bytes", uxTaskGetStackHighWaterMark(NULL));
 		sdl.appendLog(forumslader.getSpeed(), 0, forumslader.getGradient(), 0, forumslader.getHeight(), BLEhrm.getHR());
 		vTaskDelay(5000 / portTICK_PERIOD_MS);			// Sleep 5sec
 	}
@@ -131,19 +132,19 @@ void setup()
 
 
   dimmstate.trace(Serial);
-  //pushb.begin(PB_0).onPress(pushled, Atm_led::EVT_TOGGLE);
-  pushb.begin(PB_0).onPress(dimmstate, Atm_bit::EVT_TOGGLE);
-  //dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([this](int idx, int v, int up){Serial.println("DIMM Toggle");}, 0);
-  dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([](int idx, int v, int up){Serial.printf("DIMM Toggle (idx: %d, v: %d, up: %d\n", idx, v, up);display.setDimmed(v);FastLED.setBrightness(v?15:200);}, 0);
+  //pushled.trace(Serial);
 
-  pushled.begin(LED_0, true);
+  // Pushbutton for Dimmer + dimmer status LED. Both are connected via Automaton EVENTs
+  pushb.begin(PB_0).onPress(dimmstate, Atm_bit::EVT_TOGGLE);
+  //pushled.begin(LED_0, true);
+  //dimmstate.begin(Atm_bit::OFF).onChange(pushled, Atm_led::EVT_TOGGLE).onChange([](int idx, int v, int up){Serial.printf("DIMM Toggle (idx: %d, v: %d, up: %d\n", idx, v, up);display.setDimmed(v);FastLED.setBrightness(v?15:200);}, 0);
+  dimmstate.begin(Atm_bit::OFF).led(LED_0).onChange([](int idx, int v, int up){
+	  display.setDimmed(v);
+	  FastLED.setBrightness(v?15:200);
+	  //pushled.trigger(v?Atm_led::EVT_ON : Atm_led::EVT_OFF);
+  }, 1);
 
   sdl.setup();
-
-  String returnstring;
-  sdl.getAllFileLinks(returnstring);
-  Serial.println(returnstring.c_str());
-  Serial.flush();
 
   xTaskCreate(task_writeLog, "LogWriter SD",
     2048,            // Stack size (bytes)
@@ -153,11 +154,86 @@ void setup()
   );
 }
 
+void setupWebserver() {
+	static String htmlresponse(""); // Reserve buffer for HTML response
+	// Enable file deletion
+	//				server.on("^\\/del\\/[0-9]+)$", HTTP_GET, [](AsyncWebServerRequest *request) {   // using DELETE method on the same URI as for "serveStatic" would be more elegant, but is not possible to create links that result in making the browser use DELETE method. So use special "del" uri
+	server.on("^\\/del\\/([A-Z,0-9,_,.,/]+)$", HTTP_GET, [](AsyncWebServerRequest *request) {
+		// using DELETE method on the same URI as for "serveStatic" would be more elegant, but is not possible to create links that result in making the browser use DELETE method. So use special "del" uri
+		sdl.logf(SDLogger::Log_Info, SDLogger::TAG_WIFI, "💻 Request on /del/: %s\n\tPath-Arg: %s", request->url().c_str(), request->pathArg(0).c_str());
+		String dUri = String("/BTTacho/") + request->pathArg(0);
+		uint16_t http_code = 500;
+		String html_resp("<html><body>");
+		if (sdl.deleteFile(dUri)) {
+			http_code = 200;
+			html_resp += "OK - file deleted.";
+		} else {
+			http_code = 403;
+			html_resp += "Forbidden - file can't be deleted (probably because it does not exist";
+		}
+		html_resp += "</body></html>";
+		request->send(http_code, "text/html", html_resp.c_str());
+	});
+
+	// -- download Binary Logfile
+	server.serveStatic("/log/", SD, "/BTTacho/");
+
+	// -- generate Logfile Index
+	server.on("/logfiles/", HTTP_GET, [](AsyncWebServerRequest *request) {
+		htmlresponse.clear();
+		sdl.getAllFileLinks(htmlresponse);
+		Serial.println(htmlresponse);
+		request->send(200, "text/html", htmlresponse.c_str()); // TODO: Check of the webserver handles the String. It's on stack, so there may be a use-after-free issue here.
+	});
+
+	// -- generate Logfile Index
+	server.on("/logfiles-c/", HTTP_GET, [](AsyncWebServerRequest *request) {
+		AsyncWebServerResponse *response = request->beginChunkedResponse("text/plain", [](uint8_t *buffer, size_t maxLen, size_t index) -> size_t {
+			static uint8_t count=0;
+			Serial.printf("Async chunked response %d (len: %d, index: %d)", count, maxLen, index);
+//TODO
+			if (++count > 5) {
+				buffer = 0;
+				count=0;
+				return 0;
+			}
+			strncpy((char*)(buffer), "Test", maxLen);
+			buffer[5] = count+'0';
+			buffer[6] = '\n';
+			return 7;
+
+		});
+		response->addHeader("Server","ESP Async Web Server");
+		request->send(response);
+//		htmlresponse.clear();
+//		sdl.getAllFileLinks(htmlresponse);
+//		Serial.println(htmlresponse);
+//		request->send(200, "text/html", htmlresponse.c_str()); // TODO: Check of the webserver handles the String. It's on stack, so there may be a use-after-free issue here.
+	});
+
+
+	// -- offer cleanup
+	server.on("/cleanup", HTTP_GET, [](AsyncWebServerRequest *request) {
+		sdl.autoCleanUp("/BTTacho/");
+		request->send(200, "text/plain", "Cleanup done.");
+	});
+
+	// -- Allow OTA via Web ("ElegantOTA" library)
+	AsyncElegantOTA.begin(&server); // Start ElegantOTA
+	server.onNotFound([](AsyncWebServerRequest *request) {
+		sdl.logf(SDLogger::Log_Info, SDLogger::TAG_WIFI, "🛈 💻 Can't handle request on : %s\n", request->url().c_str());
+		String responsetext = request->url() + " not found!\n";
+		request->send(404, "text/plain", responsetext.c_str());
+	});
+	server.begin();
+	sdl.logf(SDLogger::Log_Info, SDLogger::TAG_WIFI, "🛈 💻 Connected to WiFi - HTTP server started at %s.\n", WiFi.localIP().toString().c_str());
+}
 
 void loop() {
 	static uint32_t lastDisplayUpdate = 0;
 	static uint16_t ani_counter = 0;
 	static bool wifiInitialized = false;
+
 	//static uint16_t touch_ani[4] = {0, 0, 0, 0};
 	forumslader.loop();
 	BLEhrm.loop();
@@ -197,8 +273,7 @@ void loop() {
 		if (batStep > 7) batStep = 7;
 		leds[1] = battledsteps[batStep];
 
-		if (ani_counter % 10 == 0) Serial.printf("Steps: Power: %d (%.1fW), BAT: %d (%.2fA)\n", powerStep, power, batStep, cur); // 10 * 190ms = 1sec cycle
-
+		//if (ani_counter % 10 == 0) Serial.printf("Steps: Power: %d (%.1fW), BAT: %d (%.2fA)\n", powerStep, power, batStep, cur); // 10 * 190ms = 1sec cycle
 
 		//Heart rate
 		uint8_t hr = BLEhrm.getHR();
@@ -217,53 +292,48 @@ void loop() {
 		if (!BLEhrm.isConnected()) leds[7] = CRGB::Red;
 
 		FastLED.show();
-		if (ani_counter % 50 == 0) {
-			AtmESP32TouchButton::diagnostics();		// 50 * 190ms = 5sec cycle
+		if (ani_counter % 50 == 0 && ( sdl.checkLogLevel(SDLogger::Log_Debug, SDLogger::TAG_OP, false) || sdl.checkLogLevel(SDLogger::Log_Debug, SDLogger::TAG_OP, true) ) ) {			// 50 * 190ms = 5sec cycle
+			AtmESP32TouchButton::diagnostics();
 			Serial.println();
 			time_t timeNow = now();
-			Serial.printf("Now: %ld\n",timeNow);
+			String time_str_rtc = DateFormatter::format(DateFormatter::HTTP, timeNow);
+			sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_OP, "🕑 %s", time_str_rtc.c_str());
+
+//			struct tm timeinfo;
+//			bool rc = getLocalTime(&timeinfo);
+//			Serial.print(millis());
+//			Serial.print(rc?"[OK]: ":"[NOK]: ");
+//			Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+// This code shows NTP-time only (1970 if no connection to NTP)
+//			time_t time_now;
+//			time(&time_now);
+//			String time_str = DateFormatter::format(DateFormatter::HTTP, time_now);
+//			sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_OP, "🕑 %s", time_str.c_str());
 		}
 
 		// Check WiFi
 		if (!wifiInitialized) {
 			if (WiFi.status() == WL_CONNECTED) {
 				wifiInitialized = true;
-////				server.on("/logfile.bin", HTTP_GET, [](AsyncWebServerRequest *request) {
-////							//request->send(200, "text/plain", "Hi! Logfile (no /) placeholder.");
-////							request->send(SD, "/BTTacho/LOG_0002.BIN", "application/octet-stream", true);
-////						});
-//				server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-//					request->send(200, "text/plain", "Hi! I am ESP32.");
-//				});
-//				server.onNotFound([](AsyncWebServerRequest *request){
-//				  request->send(404);
-//				});
-				server.serveStatic("/log/", SD, "/BTTacho/");
-				AsyncElegantOTA.begin(&server);    // Start ElegantOTA
-				server.serveStatic("/SD/", SD, "/");
-				server.on("/logfiles/", HTTP_GET, [](AsyncWebServerRequest *request) {
-					Serial.println("📜 REQUEST: logfile.bin [hardcoded]");
-					String returnstring("");
-					sdl.getAllFileLinks(returnstring);
-					request->send(200, "text/html", returnstring.c_str());
-//					request->send(SD, "/BTTacho/LOG_0002.BIN", "application/octet-stream", true);
-				});
-//				server.on("/log/", HTTP_GET, [](AsyncWebServerRequest *request) {
-//					void;
-//				});
-				//}
-				server.begin();
-				Serial.printf("Connected to WiFi - HTTP server started at %s.\n", WiFi.localIP().toString().c_str());
 				stats.setIPStr(WiFi.localIP().toString());
+
+				// Setup Web Server
+				setupWebserver();
+
 				//init and get the time
+				struct tm timeinfo;
 				configTime(3600, 3600, "pool.ntp.org");
-				  struct tm timeinfo;
-				  if(!getLocalTime(&timeinfo)){
-				    Serial.println("Failed to obtain time");
-				    return;
-				  }
-				  Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
-				  RTC.set(time(0));
+				getLocalTime(&timeinfo);
+				delay(200);
+				if(getLocalTime(&timeinfo)){
+					time_t time_now;
+					time(&time_now);
+					String time_str = DateFormatter::format(DateFormatter::HTTP, time_now);
+					sdl.logf(SDLogger::Log_Info, SDLogger::TAG_WIFI, "🕑 got time from NTP: %s", time_str.c_str());
+					RTC.set(time(0));
+				} else {
+				    sdl.log(SDLogger::Log_Warn, SDLogger::TAG_WIFI, "❌🕑 Failed to obtain time from NTP");
+				}
 			} else if (ani_counter > 150) {
 				wifiInitialized = true;
 				Serial.println("Not connected ot Wifi - disabling it");

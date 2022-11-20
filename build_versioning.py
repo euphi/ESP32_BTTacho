@@ -25,11 +25,11 @@ hf = """
   #define BUILD_NUMBER "{}"
 #endif
 #ifndef VERSION
-  #define VERSION {}".{} - {}"
+  #define VERSION {}".{}-{}"
 #endif
 #ifndef VERSION_SHORT
   #define VERSION_SHORT {}".{}"
 #endif
-""".format(build_no, version,str(build_no), datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S"), version,str(build_no))
+""".format(build_no, version,str(build_no), datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"), version,str(build_no))
 with open(FILENAME_VERSION_H, 'w+') as f:
     f.write(hf)

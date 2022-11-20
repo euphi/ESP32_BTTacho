@@ -9,6 +9,7 @@
 
 #include <inttypes.h>
 #include <Statistics.h>
+#include <SDLogger.h>
 
 // static
 uint8_t BtClassicForumsLader::address[6] = { 0x20, 0x13, 0x01, 0x18, 0x02, 0x26 }; // Forumslader
@@ -78,8 +79,7 @@ void BtClassicForumsLader::connect() {
 
 void BtClassicForumsLader::updateDataFromString() {
 	lastUpdate = millis();
-	Serial.print("ℹ️ Rvcd string from BT: ");
-	Serial.println(bufferSerial);
+	sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_FL, "ℹ️ Rvcd string from BT: %s", bufferSerial);
 	int8_t scanCt = 0;
 	float speed_f = NAN;
 	uint8_t scanFLC_id;
@@ -137,6 +137,7 @@ void BtClassicForumsLader::updateDataFromString() {
 		default:
 			Serial.printf("❌ Unknown FL-ID '%c'\n", bufferSerial.charAt(3));
 		}
+		sdl.log(SDLogger::Log_Info, SDLogger::TAG_RAW_NMEA, bufferSerial);
 
 	} else {
 		Serial.println("❌ Unknown String identifier");

@@ -32,7 +32,7 @@ public:
 
 	float getAvgSpeed(ESummaryType idx) const {return avg_speed[idx];}
 	float getMaxSpeed(ESummaryType idx) const {return max_speed[idx];}
-	float getDistance(ESummaryType idx) const {return distance - start_distance[idx];}
+	float getDistance(ESummaryType idx) const {return (distance - start_distance[idx]) / 1000.0;}
 	uint16_t getTimeDriving(ESummaryType idx) const {return time_driving[idx];}
 	uint16_t getTimeTotal(ESummaryType idx) const {return time_total[idx];}
 

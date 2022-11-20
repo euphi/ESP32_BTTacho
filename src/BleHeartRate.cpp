@@ -9,6 +9,7 @@
 #include <BLEDevice.h>
 #include <BLEAdvertisedDevice.h>
 #include <Arduino.h>
+#include <SDLogger.h>
 
 // Init static members
 // HRM service
@@ -21,8 +22,7 @@ const BLEUUID BleHeartRate::charUUID = BLEUUID((uint16_t)0x2A37);
 // FIXME: Should be part of class
 bool scanning = false;
 void scanCompleteCB(BLEScanResults result) {
-	Serial.print("BLE scan completed: ");
-	Serial.println(result.getCount());
+	sdl.logf(SDLogger::Log_Info, SDLogger::TAG_HR, "🔵 ✔️ BLE scan completed: %d devices found.", result.getCount());
 	scanning = false;
 }
 // --------------------------------------------------------------------------------------------------------------------
@@ -34,10 +34,10 @@ BleHeartRate::BleHeartRate(Statistics& _stats): stats(_stats), simulation(false)
 
 // Interface BLEAdvertisedDeviceCallbacks
 void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
-	Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
+	sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_HR, "🔵 Advertised Device: %s ", advertisedDevice.toString().c_str());
 	// We have found a device, let us now see if it contains the service we are looking for.
 	if (advertisedDevice.haveServiceUUID()  && advertisedDevice.getServiceUUID().equals(serviceUUID)) {
-		Serial.print(F("Found our device!  address: "));
+		sdl.logf(SDLogger::Log_Info, SDLogger::TAG_HR, "Found our device! [%s]", advertisedDevice.toString().c_str());
 		advertisedDevice.getScan()->stop();
 
 		//Also stop pBLEScan--- // TODO: Check if correct. Stopped twice?
@@ -57,33 +57,35 @@ void BleHeartRate::onResult(BLEAdvertisedDevice advertisedDevice) {
 //--------------------------------------------------------------------------------------------
 void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify) {
   lastUpdate = millis();
-  if (bitRead(pData[0], 0) == 1) {
-    Serial.println(F("16bit HeartRate Detected"));
-  } else {
-    Serial.println(F("8bit HeartRate Detected"));
+
+  bool debug = sdl.checkLogLevel(SDLogger::Log_Debug, SDLogger::TAG_HR, true) || sdl.checkLogLevel(SDLogger::Log_Debug, SDLogger::TAG_HR, false);
+
+  if (debug) {
+		if (bitRead(pData[0], 0) == 1) {
+			sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F("16bit HeartRate Detected"));
+		} else {
+			sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F("8bit HeartRate Detected"));
+		}
   }
 
   uint32_t* pData32 = (uint32_t*)pData;
   hr = pData[1];
-  Serial.printf("Data with length %d bytes: %d [%x]\n", length, hr, *pData32);
-  if (length == 2) {
-    Serial.print("Heart Rate ");
-    Serial.print(hr, DEC);
-    Serial.println("bpm");
-  }
-  //
+  if (debug) sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_HR, "Data with length %d bytes: %d [%x]\n", length, hr, *pData32);
+
   bool data8Bit = (pData[0] & 1) == 0; // lowest Bit 1 --> 16 Bit
   uint8_t contact = (pData[0] >> 1) & 3; // Bit 1&2 --> Contact
-  switch (contact) {
-  case 2:
-	  Serial.println("No contact");
-	  break;
-  case 3:
-	  Serial.println("Contact");
-	  break;
-  default:
-	  Serial.printf("Contact not supported [%x]\n", contact);
-  }
+	if (debug) {
+		switch (contact) {
+		case 2:
+			sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F("No contact"));
+			break;
+		case 3:
+			sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F("Contact"));
+			break;
+		default:
+			sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_HR, "Contact not supported [%x]\n", contact);
+		}
+	}
   bool ee_status =  ((pData[0] >> 3) & 1) == 1;  // Bit 3 --> EE
   bool rr_interval = ((pData[0] >> 4) & 1) == 1;  // Bit 4 --> RR
 
@@ -93,7 +95,7 @@ void BleHeartRate::notifyCallback( BLERemoteCharacteristic* pBLERemoteCharacteri
   } else {
       hr = (pData[2] << 8) | pData[1];
   }
-  Serial.printf("%sbit Data HR: %d bpm - EE: %s - RR: %s\n", data8Bit?"8":"16", hr, ee_status?"true":"false", rr_interval?"true":"false");
+  sdl.logf(SDLogger::Log_Info, SDLogger::TAG_HR, "%sbit Data HR: %d bpm - EE: %s - RR: %s\n", data8Bit?"8":"16", hr, ee_status?"true":"false", rr_interval?"true":"false");
 
 
 //  if res["ee_status"]:
@@ -128,15 +130,15 @@ void BleHeartRate::loop() {
 	}
 	if (doConnect) {
 	    if (connectToServer(*pServerAddress)) {
-	      Serial.println(F("We are now connected to the BLE HRM"));
+	    	sdl.log(SDLogger::Log_Info, SDLogger::TAG_HR, F("🔵✔️ connected to the BLE HRM"));
 	      connected = true;
 	    } else {
-	      Serial.println(F("We have failed to connect to the HRM; there is nothing more we will do."));
+	    	sdl.log(SDLogger::Log_Warn, SDLogger::TAG_HR, F("🔵❌ Failed to connect to the HRM."));
 	    }
 	    doConnect = false;
 	} else if (connected) {
 		if (!pClient->isConnected()) {
-			Serial.println("No longer connected - restart scanning");
+			sdl.log(SDLogger::Log_Info, SDLogger::TAG_HR, F("🔵⚠️ No longer connected - restart scanning"));
 			connected = false;
 			hr = 0;
 		}
@@ -144,7 +146,7 @@ void BleHeartRate::loop() {
 	} else if (!scanning) {
 		pBLEScan->stop();
 		pBLEScan->clearResults();
-		Serial.println("BLE: Restart scan");
+		sdl.log(SDLogger::Log_Info, SDLogger::TAG_HR, F("🔵 BLE: Restart scan"));
 		pBLEScan->start(scanTime, scanCompleteCB); // Non-Blocking
 		scanning = true;
 	}
@@ -158,37 +160,35 @@ void BleHeartRate::loop() {
 //  Connect to BLE HRM
 //--------------------------------------------------------------------------------------------
 bool BleHeartRate::connectToServer(BLEAddress pAddress) {
-    Serial.print(F("Forming a connection to "));
-    Serial.println(pAddress.toString().c_str());
+	sdl.logf(SDLogger::Log_Info, SDLogger::TAG_HR, "🔵 Forming a connection to %s", pAddress.toString().c_str());
 
     if (!pClient) {
     	pClient  = BLEDevice::createClient();
-    	Serial.println(F(" - Created client"));
+    	sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F(" - Created client"));
     } else {
-    	Serial.println(F(" - reusing existing client"));
+    	sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F(" - reusing existing client"));
     }
 
     // Connect to the HRM BLE Server.
     pClient->connect(pAddress);
-    Serial.println(F(" - Connected to server"));
+    sdl.log(SDLogger::Log_Info, SDLogger::TAG_HR, F("🔵 - Connected to server"));
 
     // Obtain a reference to the service we are after in the remote BLE server.
     BLERemoteService* pRemoteService = pClient->getService(serviceUUID);
-    if (pRemoteService == nullptr) {
-      Serial.print(F("Failed to find our service UUID: "));
-      //Serial.println(serviceUUID.toString().c_str());
-      return false;
-    }
-    Serial.println(F(" - Found our service"));
+	if (pRemoteService == nullptr) {
+		sdl.log(SDLogger::Log_Warn, SDLogger::TAG_HR, F("🔵⚠️ Failed to find our service UUID: "));
+		//Serial.println(serviceUUID.toString().c_str());
+		return false;
+	}
+    sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F(" - Found our service"));
 
     // Obtain a reference to the characteristic in the service of the remote BLE server.
     pRemoteCharacteristic = pRemoteService->getCharacteristic(charUUID);
     if (pRemoteCharacteristic == nullptr) {
-      Serial.print(F("Failed to find our characteristic UUID: "));
-      //Serial.println(charUUID.toString().c_str());
+    	sdl.log(SDLogger::Log_Warn, SDLogger::TAG_HR, F("🔵⚠️ Failed to find our characteristic."));
       return false;
     }
-    Serial.println(F(" - Found our characteristic"));
+    sdl.log(SDLogger::Log_Debug, SDLogger::TAG_HR, F(" - Found our characteristic"));
 
     // Register for Notify
     pRemoteCharacteristic->registerForNotify([&](BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify) {notifyCallback(pBLERemoteCharacteristic, pData, length, isNotify);});

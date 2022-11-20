@@ -6,6 +6,7 @@
  */
 
 #include <Statistics.h>
+#include <SDLogger.h>
 
 // Icons
 
@@ -37,7 +38,7 @@ void Statistics::AddHR(uint8_t hr) {
 	for (histBucket = 0; histBucket<sizeof(histBucket); histBucket++) {
 		if (hr < hr_histogram_boundary[histBucket]) break;
 	}
-	Serial.printf("Adding HR of %d to bucket %d\n", hr, histBucket);
+	sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_STAT, "ξ ❤ Adding HR of %d to bucket %d\n", hr, histBucket);
 	hr_histogram_bucket[histBucket] += 1;
 
 	for (uint8_t i = ESP_TRIP; i <= ESP_START; i++) {
@@ -72,7 +73,7 @@ void Statistics::AddCadence(uint8_t cadence) {
 	for (histBucket = 0; histBucket<sizeof(histBucket); histBucket++) {
 		if (cadence < cadence_histogram_boundary[histBucket]) break;
 	}
-	Serial.printf("Adding cadence of %d to bucket %d\n", cadence, histBucket);
+	sdl.logf(SDLogger::Log_Debug, SDLogger::TAG_STAT, "ξ 🚲 Adding cadence of %d to bucket %d\n", cadence, histBucket);
 	cadence_histogram_bucket[histBucket] += 1;
 
 	for (uint8_t i = ESP_TRIP; i <= ESP_START; i++) {
