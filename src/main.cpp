@@ -277,7 +277,7 @@ void loop() {
 
 		//Heart rate
 		uint8_t hr = BLEhrm.getHR();
-		for (uint_fast8_t i = 0; i < 12; i++) {//TODO: Use sizeof for array size (sizeof(hr_leds) / sizeof(hr_leds[0]) ?
+		for (uint_fast8_t i = 0; i < 17; i++) {//TODO: Use sizeof for array size (sizeof(hr_leds) / sizeof(hr_leds[0]) ?
 			if (hr < hr_leds[i].max) {
 				for (uint_fast8_t l = 0; l < 5 ; l++) {
 							leds[7-l] = hr_leds[i].leds[l];
