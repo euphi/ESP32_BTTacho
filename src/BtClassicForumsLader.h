@@ -5,13 +5,11 @@
  *      Author: ian
  */
 
+#if 0
 #pragma once
 #include <Arduino.h>
 #include <BluetoothSerial.h>
 #include <Statistics.h>
-
-//#include <pixeltypes.h>
-#include <FastLED.h>
 
 class BtClassicForumsLader {
 public:
@@ -20,7 +18,7 @@ public:
 	void connect();
 
 	enum CONN_STATE {STATE_INIT, STATE_CONNECTING, STATE_CONNECTED, STATE_DISCONNECTED} ;
-	CRGB getStateLED();
+//	CRGB getStateLED();
 	CONN_STATE isConnected() const {return cstate;}
 
 	static constexpr float dist_per_pulse = 2.155 / 14; // Umfang / Polpaare
@@ -116,3 +114,4 @@ public:
 	int8_t getStage() const {return stufe;}
 };
 
+#endif

@@ -4,7 +4,7 @@
  *  Created on: 04.02.2022
  *      Author: ian
  */
-
+#if 0
 #include <BtClassicForumsLader.h>
 
 #include <inttypes.h>
@@ -28,20 +28,20 @@ BtClassicForumsLader::BtClassicForumsLader(Statistics& _stats): stats(_stats), s
 
 }
 
-CRGB BtClassicForumsLader::getStateLED() {
-	CRGB led = CRGB::DarkOliveGreen;
-	uint16_t sec = millis() / 1000;
-	if (cstate == STATE_CONNECTING) {
-			if (sec % 2) led = CRGB::Blue;
-	} else if (timeout < 20) {
-		led = (sec % 2) ? CRGB::Red : CRGB::Orange;
-	} else if (timeout < 20) {
-		led = (sec % 2) ? CRGB::Orange : CRGB::Yellow;
-	} else if (timeout < 180) {
-		led = CRGB::Orange;
-	}
-	return led;
-}
+//CRGB BtClassicForumsLader::getStateLED() {
+//	CRGB led = CRGB::DarkOliveGreen;
+//	uint16_t sec = millis() / 1000;
+//	if (cstate == STATE_CONNECTING) {
+//			if (sec % 2) led = CRGB::Blue;
+//	} else if (timeout < 20) {
+//		led = (sec % 2) ? CRGB::Red : CRGB::Orange;
+//	} else if (timeout < 20) {
+//		led = (sec % 2) ? CRGB::Orange : CRGB::Yellow;
+//	} else if (timeout < 180) {
+//		led = CRGB::Orange;
+//	}
+//	return led;
+//}
 
 void BtClassicForumsLader::connect() {
 
@@ -194,3 +194,5 @@ float BtClassicForumsLader::getDynCurrent() const {
 	if (rc < 0) rc = 0;  // Dynamo current can't be negative. However, it is not directly measured, so due to tolerences in measurement of battery and consumer current, it may be measured as negative.
 	return rc;
 }
+
+#endif

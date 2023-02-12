@@ -5,6 +5,7 @@
  *      Author: ian
  */
 
+#if 0
 #include <DisplayUI.h>
 #include <DisplayUIFonts.h>
 #include <WiFi.h>
@@ -396,3 +397,5 @@ void DisplayUI::displayAvgMaxSpeed(const uint8_t x, const uint8_t y, const uint8
 void DisplayUI::displayHistogram(const uint8_t hist[], const uint8_t hist_size,
 		const uint8_t x, const uint8_t y) {
 }
+
+#endif

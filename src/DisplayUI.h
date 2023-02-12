@@ -4,8 +4,10 @@
  *  Created on: 27.03.2022
  *      Author: ian
  */
+#if 0
 
 #pragma once
+
 
 // SSD1306 OLED 128x64 on I2C
 #include <SSD1306Wire.h>
@@ -122,3 +124,5 @@ private:
 //
 //	static const SIconInfo icons[COUNT_ICON];
 };
+
+#endif

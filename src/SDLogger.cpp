@@ -7,17 +7,8 @@
 
 #include <SDLogger.h>
 
-/*
-  Rui Santos
-  Complete project details at https://RandomNerdTutorials.com/esp32-microsd-card-arduino/
-
-  This sketch can be found at: Examples > SD(esp32) > SD_Test
-*/
-
-
 #include "SPI.h"
-#include <Singletons.h>
-#include <TimeLib.h>
+#include <DateTime.h>
 
 #include "esp_task_wdt.h"
 
@@ -68,12 +59,11 @@ void SDLogger::listDir(const char * dirname, uint8_t levels){
 
 void SDLogger::appendLog(float speed, float temp, float gradient, uint32_t distance, float height, uint8_t hr) {
 	LogData b;
-	char buffer[16];
-	time_t t = now();
-	snprintf(buffer, sizeof(buffer)-1, "%04d%02d%02d%02d%02d%02d", year(t), month(t), day(t), hour(t), minute(t), second(t));
-	Serial.println(buffer);
 
-	b.timestamp = t;
+	time_t now;
+	time(&now);
+
+	b.timestamp = now;
 	b.speed = speed;
 	b.temp = temp;
 	b.grad = gradient;
@@ -126,16 +116,17 @@ void SDLogger::setup(){
   createDir("/BTTacho");
   autoCleanUp("/BTTacho");
 
-  time_t t = now();
-  if (year(t)>=2000) { // Time is available
-	  char buffer[40];
-	  snprintf(buffer, sizeof(buffer)-1, "/BTTacho/%04d%02d%02d/L_%02d%02d%02d.bin", year(t), month(t), day(t), hour(t), minute(t), second(t));
-	  Serial.println(buffer);
-	  file_data = buffer;
-	  snprintf(buffer, sizeof(buffer)-1, "/BTTacho/%04d%02d%02d/N_%02d%02d%02d.txt", year(t), month(t), day(t), hour(t), minute(t), second(t));
-	  file_nmealog = buffer;
-	  snprintf(buffer, sizeof(buffer)-1, "/BTTacho/%04d%02d%02d/D_%02d%02d%02d.txt", year(t), month(t), day(t), hour(t), minute(t), second(t));
-	  file_debuglog = buffer;
+  time_t now;
+  time(&now);
+  if (DateTime.isTimeValid()) { // Time is available
+	  String time_str = DateFormatter::format("/BTTacho/%Y%m%d/L_%H%M%S.bin",now);
+	  Serial.println(time_str);
+	  file_data = time_str;
+	  time_str = DateFormatter::format("/BTTacho/%Y%m%d/N_%H%M%S.bin",now);
+//	  snprintf(buffer, sizeof(buffer)-1, "/BTTacho/%04d%02d%02d/N_%02d%02d%02d.txt", year(t), month(t), day(t), hour(t), minute(t), second(t));
+	  file_nmealog = time_str;
+	  time_str = DateFormatter::format("/BTTacho/%Y%m%d/D_%H%M%S.bin",now);
+	  file_debuglog = time_str;
   } else {
 	  listDir("/BTTacho", 0);
   }
@@ -253,11 +244,12 @@ void SDLogger::log(LogType type, LogTag tag, const String str) const {
     if (!(write_file || write_serial)) return;
 
 	char buffer[18];
-	time_t t = now();
+	time_t now;
+	time(&now);
 
-	snprintf(buffer, sizeof(buffer)-1, "%04d%02d%02d%02d%02d%02d: ", year(t), month(t), day(t), hour(t), minute(t), second(t));
+    String time_str = DateTime.format("%Y%m%d-%H%M%S: ");
 	if (write_file) {
-		f.print(buffer);
+		f.print(time_str);
 		f.println(str);
 		f.flush();
 		f.close();
