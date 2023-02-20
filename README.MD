@@ -1,5 +1,7 @@
 # ESP32 Tacho
 
+![Screenshot from FreeCAD](https://github.com/euphi/ESP32_BTTacho/blob/main/Mechanics/Screenshot-FreeCAD-BTTacho2.png)
+
 _See below on information how to compile_
 
 ## Features (IN DEVELOPMENT)
